@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abigail Volante — Personal Archive</title>
-<meta name="description" content="A personal archive of books read, math notes, and essays.">
+<meta name="description" content="A collection of books read, math notes, and essays.">
 <meta name="google-site-verification" content="dnWclCI3Eb8yzoPDDmGuc9DcSP4Zy4BvUUyiheDyXGc" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,6 +297,40 @@
     .essay-row{ grid-template-columns: 1fr; gap: 4px; }
   }
 
+  /* ---------- Resources ---------- */
+
+ .resource-list{ display: grid; gap: 26px; }
+
+ .resource-row{
+   display: grid;
+   grid-template-columns: 72px 1fr;
+   gap: 18px;
+ }
+
+ .resource-row .tag{
+   font-family: var(--mono);
+   font-size: 11px;
+   color: var(--ink-dim);
+   padding-top: 4px;
+ }
+
+ .resource-row h3{
+   font-family: var(--display);
+   font-weight: 600;
+   font-size: 1.08rem;
+   margin: 0 0 4px;
+ }
+
+ .resource-row h3 a{ color: var(--ink); }
+ .resource-row h3 a:hover{ color: var(--accent); }
+
+ .resource-row p{ margin: 0; color: var(--ink-dim); font-size: 0.96rem; max-width: 56ch; }
+
+ @media (max-width: 520px){
+   .resource-row{ grid-template-columns: 1fr; gap: 4px; }
+ }
+
+
   /* ---------- Footer ---------- */
 
   footer{ padding: 56px 0 90px; }
@@ -343,8 +377,7 @@
     <p class="eyebrow">A Personal Archive</p>
     <h1 class="name">Abigail Volante</h1>
     <p class="tagline">
-      This is a collection of  everything I've read, some thoughts and ideas I've come up with,
-       and topics I find interesting and try to look into.</p>
+      A running collection of books I've read, some interesting ideas, and resources I've gathered along the way.</p>
 
     <div class="meta-line">
       <span><b>Based in</b> — Blackburn, UK</span>
@@ -359,6 +392,8 @@
     <a href="#reading">Reading</a>
     <a href="#notes">Maths Notes</a>
     <a href="#essays">Essays</a>
+    <a href="#resources">Resources</a>
+    <a href="#topics">Topics</a>
   </div>
 </nav>
 
@@ -424,6 +459,7 @@
      <li>A Mathematician's Apology <span class="book-author">— G. H. Hardy</span></li>
      <li>Closing the Gap <span class="book-author">— Vicky Neale</span></li>
      <li>Fermat's Last Theorem <span class="book-author">— Simon Singh</span></li>
+     <li>Probability <span class="book-author">— Geoffrey Grimmett & Dominic Welsh</span></li>
    </ul>
 
    <h3 class="genre-heading">Physics &amp; Science</h3>
@@ -483,12 +519,11 @@
       <article class="entry-row">
         <span class="tag">01</span>
         <div>
-          <h3 class="entry-title">Cauchy's Integral Formula</h3>
+          <h3 class="entry-title">Cauchy's Integral Formula and the rigidity of holomorphic functions</h3>
           <p class="entry-meta">Complex Analysis</p>
-          <p class="entry-body">Is it possible to determine the value of a holomorphic function inside a
-            region using only its values on the boundary? Cauchy's Integral Formula tells us that it is.
-            Almost like magic. This remarkable result highlights just how rigid and unique holomorphic functions
-            are in complex analysis.</p>
+          <p class="entry-body">Cauchy's Integral Formula shows that the values of a holomorphic function
+             inside a region are completely determined by its values on the boundary. It's one of the clearest illustrations
+             of how rigid holomorphic functions are, far more constrained than their real-differentiable counterparts.</p>
         </div>
       </article>
     </div>
@@ -499,19 +534,68 @@
     <div class="section-head">
       <h2 class="section-title">Essays &amp; Thoughts</h2>
     </div>
-    <p class="section-note">Longer-form writing — things I kept thinking about after I closed the laptop.</p>
+    <p class="section-note">Longer-form writing on whatever I've been thinking about.</p>
 
     <div class="essay-list">
       <div class="essay-row">
-        <time datetime="2026-07-01">Jul 2026</time>
+        <time datetime="2026-07-01"></time>
         <div>
-          <h3><a href="#">On being slow at things you're good at</a></h3>
-          <p>...</p>
+          <h3><a href="#"></a></h3>
+          <p></p>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- ============ RESOURCES ============ -->
+  <section id="resources">
+    <div class="section-head">
+      <h2 class="section-title">Resources</h2>
+    </div>
+    <p class="section-note">Courses, books, and sites I use mostly for myself, but fun to browse either way.</p>
+
+    <h3 class="genre-heading">Mathematics</h3>
+    <ul class="book-list">
+      <li><a href="https://terrytao.wordpress.com/">Terrence Tao's Page</a></li>
+      <li><a href="https://mml-book.github.io/">Mathematics for Machine Learning</a></li>
+    </ul>
+
+    <h3 class="genre-heading">Computer Science/Programming</h3>
+    <ul class="book-list">
+      <li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/">Intro to Computer Science and Programming in Python, MIT OpenCourseWare </a></li>
+      <li><a href="https://ocw.mit.edu/courses/1-00-introduction-to-computers-and-engineering-problem-solving-spring-2012/">Introduction to Computers and Engineering Problem Solving, MIT OpenCourseWare</a></li>
+      <li><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/">Mathematics for Computer Science, MIT OpenCourseWare</a></li>
+      <li><a href="https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2005/">Intro to Algorithms, MIT OpenCourseWare</a></li>
+      <li><a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a></li>
+      <li><a href="https://github.com/freeCodeCamp/awesome-quincy-larson-emails">freeCodeCamp Learning Resource/a></li>
+      <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLZoo</a></li>
+      <li><a href="https://github.com/lighthousand/books">More Programming Books</a></li>
+      <li><a href="https://algs4.cs.princeton.edu/home/">Algorithms, 4th Edition</a></li>
+      <li><a href="https://projecteuler.net/about">Project Euler</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X">Deep Learning, Stanford CS230</a><li>
+    </ul>
+
+    <h3 class="genre-heading">Other</h3>
+    <ul class="book-list">
+    <li><a href="https://github.com/emmilco/path_finder">Pathfinding and Maze-Generation Algorithms</a><li>
+    <li><a href="https://www.researchgate.net/publication/215659315_A_Wavelet_Tour_of_Signal_Processing">A Wavelet Tour of Signal Processing</a><li>
+    <ul class="book-list">
+    </ul>
+  </section>
+
+  <!-- ============ TOPICS ============ -->
+ <section id="topics">
+   <div class="section-head">
+     <h2 class="section-title">Topics</h2>
+   </div>
+   <p class="section-note">Some interesting topics I found and try to look into.</p>
+
+   <ul class="book-list">
+     <li>Wavelets and time-frequency analysis: <span class="book-author"><a href= "https://www.researchgate.net/publication/215659315_A_Wavelet_Tour_of_Signal_Processing">A Wavelet Tour of Signal Processing</a></span></li>
+   </ul>
+ </section>
+
 
 </main>
 
