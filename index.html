@@ -186,6 +186,39 @@
     font-size: 0.95rem;
     margin: 0 0 34px;
   }
+  /* ---------- Compact grouped book list ---------- */
+
+  .genre-heading{
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 34px 0 12px;
+  }
+
+  .genre-heading:first-child{ margin-top: 0; }
+
+  .book-list{
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+    display: grid;
+    gap: 9px;
+  }
+
+  .book-list li{
+    font-size: 0.98rem;
+    color: var(--ink);
+  }
+
+  .book-list li .book-author{
+    color: var(--ink-dim);
+    font-family: var(--mono);
+    font-size: 0.82em;
+    margin-left: 2px;
+  }
+
 
   /* ---------- Entry rows (books / notes) ---------- */
 
@@ -309,7 +342,7 @@
     <p class="eyebrow">A Personal Archive</p>
     <h1 class="name">Abigail Volante</h1>
     <p class="tagline">
-      This is a personal archive on everything I've read, some thoughts and ideas I've come up with,
+      This is a collection of  everything I've read, some thoughts and ideas I've come up with,
        and topics I find interesting and try to look into.</p>
 
     <div class="meta-line">
@@ -333,7 +366,6 @@
   <!-- ============ ABOUT ============ -->
   <section id="about">
  <div class="section-head">
-   <span class="call-number">001.1</span>
    <h2 class="section-title">About</h2>
  </div>
  <p class="section-note">Who's keeping this archive.</p>
@@ -356,51 +388,106 @@
 </section>
 
 
+
   <!-- ============ READING ============ -->
-  <section id="reading">
-    <div class="section-head">
-      <h2 class="section-title">Reading</h2>
-    </div>
-    <p class="section-note">Here's a fairly complete list of books I've read. Although, majority are
-      popular maths/science books, I try to diversify the genres I read.</p>
+ <section id="reading">
+   <div class="section-head">
+     <h2 class="section-title">Reading</h2>
+   </div>
+   <p class="section-note">Here's a fairly complete list of all the books I've read.
+     Although majority are popular maths/science books, I try to diversify the genres I read.
+   </p>
 
-    <div class="entry-list">
-      <article class="entry-row">
-        <span class="tag">R-01<br>HAR</span>
-        <div>
-          <h3 class="entry-title">A Mathematician's Apology</h3>
-          <p class="entry-meta">G.H. Hardy</p>
-          <p class="entry-body">This is the book that got me into mathematics.</p>
-        </div>
+   <h3 class="genre-heading">Mathematics</h3>
+   <ul class="book-list">
+     <li>Mathematics From the Birth of Numbers <span class="book-author">— Jan Gullberg</span></li>
+     <li>Mapmatics <span class="book-author">— Paulina Rowińska</span></li>
+     <li>An Introduction to the Theory of Numbers <span class="book-author">— G. H. Hardy</span></li>
+     <li>Calculus <span class="book-author">— Michael Spivak</span></li>
+     <li>The Calculus Lifesaver <span class="book-author">— Adrian Banner</span></li>
+     <li>Contemporary Abstract Algebra <span class="book-author">— Joseph A. Gallian</span></li>
+     <li>Groups and Their Graphs <span class="book-author">— Israel Grossman</span></li>
+     <li>Advanced Problems in Mathematics <span class="book-author">— Stephen Siklos</span></li>
+     <li>Makers of Mathematics <span class="book-author">— Stuart Hollingdale</span></li>
+     <li>Multivariate Calculus and Geometry <span class="book-author">— Sean Dineen</span></li>
+     <li>Graph Theory <span class="book-author">— Ronald Gould</span></li>
+     <li>What Is Mathematics? <span class="book-author">— Richard Courant</span></li>
+     <li>The First Six Books of the Elements of Euclid <span class="book-author">— Oliver Byrne</span></li>
+     <li>The Man Who Loved Only Numbers <span class="book-author">— Paul Hoffman</span></li>
+     <li>Alex's Adventures in Numberland <span class="book-author">— Alex Bellos</span></li>
+     <li>Linear Algebra <span class="book-author">— Serge Lang</span></li>
+     <li>How to Think Like a Mathematician <span class="book-author">— Kevin Houston</span></li>
+     <li>How to Solve It <span class="book-author">— George Pólya</span></li>
+     <li>Letters to a Young Mathematician <span class="book-author">— Ian Stewart</span></li>
+     <li>Discrete Mathematics and Its Applications <span class="book-author">— Kenneth H. Rosen</span></li>
+     <li>A Mathematician's Apology <span class="book-author">— G. H. Hardy</span></li>
+     <li>Closing the Gap <span class="book-author">— Vicky Neale</span></li>
+     <li>Fermat's Last Theorem <span class="book-author">— Simon Singh</span></li>
+   </ul>
 
-        <span class="tag">R-01<br>HAR</span>
-        <div>
-          <h3 class="entry-title">A Mathematician's Apology</h3>
-          <p class="entry-meta">G.H. Hardy</p>
-          <p class="entry-body">This is the book that got me into mathematics.</p>
-        </div>
-      </article>
+   <h3 class="genre-heading">Physics &amp; Science</h3>
+   <ul class="book-list">
+     <li>QED: The Strange Theory of Light and Matter <span class="book-author">— Richard Feynman</span></li>
+     <li>Quantum <span class="book-author">— Manjit Kumar</span></li>
+     <li>In Search of Schrödinger's Cat <span class="book-author">— John Gribbin</span></li>
+     <li>Six Easy Pieces <span class="book-author">— Richard Feynman</span></li>
+     <li>Conceptual Physics <span class="book-author">— Paul Hewitt</span></li>
+     <li>A Brief History of Time <span class="book-author">— Stephen W. Hawking</span></li>
+     <li>The Selfish Gene <span class="book-author">— Richard Dawkins</span></li>
+     <li>The Magic of Reality <span class="book-author">— Richard Dawkins</span></li>
+     <li>The Blind Watchmaker <span class="book-author">— Richard Dawkins</span></li>
+     <li>The Code Book <span class="book-author">— Simon Singh</span></li>
+     <li>The GCHQ Puzzle Book <span class="book-author">— GCHQ</span></li>
+   </ul>
 
-    </div>
-  </section>
+   <h3 class="genre-heading">Philosophy &amp; History</h3>
+   <ul class="book-list">
+     <li>A Discourse on the Method <span class="book-author">— René Descartes</span></li>
+     <li>Sapiens <span class="book-author">— Yuval Noah Harari</span></li>
+     <li>The Diary of a Young Girl <span class="book-author">— Anne Frank</span></li>
+   </ul>
 
-  <!-- ============ MATHS NOTES ============ -->
+   <h3 class="genre-heading">Classic &amp; Literary Fiction</h3>
+   <ul class="book-list">
+     <li>Lolita <span class="book-author">— Vladimir Nabokov</span></li>
+     <li>Lord of the Flies <span class="book-author">— William Golding</span></li>
+     <li>Animal Farm <span class="book-author">— George Orwell</span></li>
+     <li>To Kill a Mockingbird <span class="book-author">— Harper Lee</span></li>
+     <li>Dr. Jekyll and Mr. Hyde <span class="book-author">— Robert Louis Stevenson</span></li>
+     <li>The Picture of Dorian Gray <span class="book-author">— Oscar Wilde</span></li>
+     <li>Wuthering Heights <span class="book-author">— Emily Brontë</span></li>
+     <li>Pride and Prejudice <span class="book-author">— Jane Austen</span></li>
+     <li>El Filibusterismo <span class="book-author">— José Rizal</span></li>
+     <li>Noli Me Tángere <span class="book-author">— José Rizal</span></li>
+   </ul>
+
+   <h3 class="genre-heading">Fantasy, YA &amp; Other Fiction</h3>
+   <ul class="book-list">
+     <li>The Duke and I <span class="book-author">— Julia Quinn</span></li>
+     <li>Harry Potter Series <span class="book-author">— J.K. Rowling</span></li>
+     <li>The Hunger Games Trilogy <span class="book-author">— Suzanne Collins</span></li>
+     <li>Howl's Moving Castle <span class="book-author">— Diana Wynne Jones</span></li>
+     <li>The Promised Neverland, Volumes 1-20 <span class="book-author">— Kaiu Shirai</span></li>
+   </ul>
+ </section>
+
+ <!-- ============ MATHS NOTES ============ -->
   <section id="notes">
     <div class="section-head">
       <h2 class="section-title">Maths Notes</h2>
     </div>
-    <p class="section-note">These are some of my favourite topics/proofs in maths.</p>
+    <p class="section-note">These are some of my favourite topics/proofs in maths. </p>
 
     <div class="entry-list">
       <article class="entry-row">
-        <span class="tag">N-01</span>
+        <span class="tag">01</span>
         <div>
           <h3 class="entry-title">Cauchy's Integral Formula</h3>
-          <p class="entry-meta">Complex Analysis — x min read</p>
-        <p class="entry-body">Is it possible to determine the value of a holomorphic function inside a region
-  using only its values on the boundary? Cauchy's Integral Formula tells us that it is.
-  Almost like magic. This remarkable result highlights just how rigid and unique
-  holomorphic functions are in complex analysis.</p>
+          <p class="entry-meta">Complex Analysis</p>
+          <p class="entry-body">Is it possible to determine the value of a holomorphic function inside a
+            region using only its values on the boundary? Cauchy's Integral Formula tells us that it is.
+            Almost like magic. This remarkable result highlights just how rigid and unique holomorphic functions
+            are in complex analysis.</p>
         </div>
       </article>
     </div>
@@ -409,7 +496,6 @@
   <!-- ============ ESSAYS ============ -->
   <section id="essays">
     <div class="section-head">
-      <span class="call-number">100.4</span>
       <h2 class="section-title">Essays &amp; Thoughts</h2>
     </div>
     <p class="section-note">Longer-form writing — things I kept thinking about after I closed the laptop.</p>
@@ -429,7 +515,7 @@
 </main>
 
 <footer class="wrap">
-  <p class="msg">Always happy to talk books, math, or whatever I'm currently stuck on.</p>
+  <p class="msg">Always happy to talk books, maths, or whatever I'm currently stuck on.</p>
   <div class="links">
     <a href="https://www.linkedin.com/in/abigail-volante-uk/">LinkedIn</a>
     <a href="https://github.com/abivolante">GitHub</a>
