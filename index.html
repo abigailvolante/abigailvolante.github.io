@@ -32,11 +32,11 @@
 <nav class="drawer-tabs" aria-label="Sections">
   <div class="wrap">
     <a href="#about">About</a>
-    <a href="#reading">Reading</a>
+    <a href="#reading">Books</a>
     <a href="#notes">Maths Notes</a>
-    <a href="#essays">Essays</a>
     <a href="#resources">Resources</a>
     <a href="#topics">Topics</a>
+    <a href="#personal">Personal</a>
   </div>
 </nav>
 
@@ -53,10 +53,10 @@
   <img src="photo.JPG" alt="photo.JPG" class="about-photo">
   <p class="entry-body" style="max-width: 62ch; font-size: 1.02rem; margin: 0;">
     I'm a Mathematics graduate from Lancaster University, where I focused primarily on
-    real and complex analysis, measure theory, and functional analysis. More recently, I've gotten
-    curious about the more applied side of maths particularly where it overlaps with tech and
-    programming. This blog is mainly to keep track of what I'm reading and thinking about, but
-    also to share thoughts and ideas. On the rare occasion I'm not thinking about maths, tech, or science, I like to
+    real and complex analysis, measure theory, and functional analysis. More recently,
+    I've gotten curious about taking these concepts into tech, programming, and quantitative finance.
+    This blog is mainly to keep track of what I'm reading and thinking about, but
+    also to share thoughts and ideas. On the rare occasions I'm away from my whiteboard or the terminal, I like to
     read, and explore new cafes and restaurants.
   </p>
 </div>
@@ -68,12 +68,13 @@
   <!-- ============ READING ============ -->
  <section id="reading">
    <div class="section-head">
-     <h2 class="section-title">Reading</h2>
+     <h2 class="section-title">Books</h2>
    </div>
    <p class="section-note">A fairly complete list of all the books I've read.
    </p>
 
-   <h3 class="genre-heading">Mathematics</h3>
+   <details>
+   <summary class="genre-heading">Mathematics</span></summary>
    <ul class="book-list">
      <li>Mathematics From the Birth of Numbers <span class="book-author">— Jan Gullberg</span></li>
      <li>Mapmatics <span class="book-author">— Paulina Rowińska</span></li>
@@ -100,8 +101,10 @@
      <li>Fermat's Last Theorem <span class="book-author">— Simon Singh</span></li>
      <li>Probability <span class="book-author">— Geoffrey Grimmett & Dominic Welsh</span></li>
    </ul>
+   </details>
 
-   <h3 class="genre-heading">Physics &amp; Science</h3>
+   <details>
+   <summary class="genre-heading">Physics &amp; Science</span></summary>
    <ul class="book-list">
      <li>QED: The Strange Theory of Light and Matter <span class="book-author">— Richard Feynman</span></li>
      <li>Quantum <span class="book-author">— Manjit Kumar</span></li>
@@ -115,7 +118,20 @@
      <li>The Code Book <span class="book-author">— Simon Singh</span></li>
      <li>The GCHQ Puzzle Book <span class="book-author">— GCHQ</span></li>
    </ul>
+   </details>
 
+   <details>
+   <summary class="genre-heading">Some books to read next</span></summary>
+   <ul class="book-list">
+     <li>The Pyschology of Money <span class="book-author">— Morgan Housel</span></li>
+     <li>A Random Walk Down Wall Street <span class="book-author">— Burton G. Malkiel</span></li>
+     <li>Options, Futures, and Other Derivatives <span class="book-author">— John C. Hull</span></li>
+     <li>Stochastic Calculus for Finance <span class="book-author">— Steven Shreve</span></li>
+     <li>Paul Wilmott Introduces Quantitative Finance <span class="book-author">— Paul Wilmott</span></li>
+   </ul>
+  </details>
+
+   <details><summary class="genre-heading">Leisure</span></summary>
    <h3 class="genre-heading">Philosophy &amp; History</h3>
    <ul class="book-list">
      <li>A Discourse on the Method <span class="book-author">— René Descartes</span></li>
@@ -126,18 +142,13 @@
    <h3 class="genre-heading">Classic &amp; Literary Fiction</h3>
    <ul class="book-list">
      <li>Lolita <span class="book-author">— Vladimir Nabokov</span></li>
-     <li>Lord of the Flies <span class="book-author">— William Golding</span></li>
-     <li>Animal Farm <span class="book-author">— George Orwell</span></li>
-     <li>To Kill a Mockingbird <span class="book-author">— Harper Lee</span></li>
      <li>Dr. Jekyll and Mr. Hyde <span class="book-author">— Robert Louis Stevenson</span></li>
      <li>The Picture of Dorian Gray <span class="book-author">— Oscar Wilde</span></li>
      <li>Wuthering Heights <span class="book-author">— Emily Brontë</span></li>
      <li>Pride and Prejudice <span class="book-author">— Jane Austen</span></li>
      <li>El Filibusterismo <span class="book-author">— José Rizal</span></li>
      <li>Noli Me Tángere <span class="book-author">— José Rizal</span></li>
-     <li>Macbeth <span class="book-author">— William Shakespeare</span></li>
      <li>The Great Gatsby <span class="book-author">— F. Scott Fitzgerald</span></li>
-     <li>A Christmas Carol <span class="book-author">— Charles Dickens</span></li>
      <li>Sherlock Holmes Series <span class="book-author">- Arthur Conan Doyle</span></li>
      <li>Frankenstein <span class="book-author">- Mary Shelley</span></li>
      <li>The Wind in the Willows <span class="book-author">- Kenneth Grahame</span></li>
@@ -154,15 +165,7 @@
      <li>Chrestomanci Series <span class="book-author">— Diana Wynne Jones</span></li>
      <li>The Promised Neverland, Volumes 1-20 <span class="book-author">— Kaiu Shirai</span></li>
    </ul>
-
-   <h3 class="genre-heading">Some books to read next</h3>
-   <ul class="book-list">
-     <li>The Pyschology of Money <span class="book-author">— Morgan Housel</span></li>
-     <li>A Random Walk Down Wall Street <span class="book-author">— Burton G. Malkiel</span></li>
-     <li>Options, Futures, and Other Derivatives <span class="book-author">— John C. Hull</span></li>
-     <li>Stochastic Calculus for Finance <span class="book-author">— Steven Shreve</span></li>
-     <li>Paul Wilmott Introduces Quantitative Finance <span class="book-author">— Paul Wilmott</span></li>
-   </ul>
+ </details>
  </section>
 
  <!-- ============ MATHS NOTES ============ -->
@@ -184,96 +187,62 @@
 
   </section>
 
-  <!-- ============ ESSAYS ============ -->
-  <section id="essays">
-    <div class="section-head">
-      <h2 class="section-title">Essays &amp; Thoughts</h2>
-    </div>
-    <p class="section-note">Just some random things I've thought about.</p>
-
-    <h3 class="genre-heading">Ideas</h3>
-    <ul class="book-list">
-      <li>On being slow at things you're good at.</li>
-      <li>What I didn't know.</li>
-    </ul>
-  </section>
-
-
   <!-- ============ RESOURCES ============ -->
   <section id="resources">
     <div class="section-head">
       <h2 class="section-title">Resources</h2>
     </div>
-    <p class="section-note">Some useful courses, books, and sites (mostly for myself, but nevertheless fun to browse for anyone). </p>
+    <p class="section-note">Some useful books, courses, and sites I currently use.</p>
+
+    <h3 class="genre-heading">Data Analytics</h3>
+    <ul class="book-list">
+      <li><a href="https://datalemur.com/" target="_blank" rel="noopener noreferrer">DataLemur</a> <span class="book-author">— SQL &amp; analytics interview questions pulled from real FAANG and data-analyst loops</span></li>
+      <li><a href="https://www.stratascratch.com/" target="_blank" rel="noopener noreferrer">StrataScratch</a> <span class="book-author">— SQL and Python interview questions from actual data science/analyst interviews</span></li>
+      <li><a href="https://mode.com/sql-tutorial/intro-to-intermediate-sql/index.html" target="_blank" rel="noopener noreferrer">Mode's Intermediate &amp; Advanced SQL Tutorial</a></li>
+    </ul>
+
+    <h3 class="genre-heading">Finance</h3>
+    <ul class="book-list">
+      <li><a href="https://github.com/yc-liu/readings/blob/master/Steven%20E.%20Shreve%20Stochastic%20Calculus%20for%20Finance%20I%20The%20Binomial%20Asset%20Pricing%20Model%20%202005.pdf" target="_blank" rel="noopener noreferrer">Stochastic Calculus for Finance I</a> <span class="book-author">— Shreve; binomial asset pricing as a bridge to continuous-time models</span></li>
+      <li><a href="https://www.sciencedirect.com/science/article/pii/0304414981900260" target="_blank" rel="noopener noreferrer">Martingales and stochastic integrals in the theory of continuous trading</a> <span class="book-author">— Harrison &amp; Pliska, the foundational paper linking no-arbitrage to martingale measures</span></li>
+      <li><a href="https://linkurious.com/blog/anti-money-laundering-use-cases-graph-analytics/" target="_blank" rel="noopener noreferrer">Anti-money laundering use cases for graph analytics</a></li>
+      <li><a href="https://www.ravelin.com/insights/link-analysis-and-graph-database-for-fraud-detection" target="_blank" rel="noopener noreferrer">Link analysis and graph databases for fraud detection</a></li>
+      <li><a href="https://people.math.ethz.ch/~delbaen/ftp/preprints/NLB.pdf" target="_blank" rel="noopener noreferrer">The Fundamental Theorem of Asset Pricing for Unbounded Stochastic Processes</a> <span class="book-author">— Delbaen &amp; Schachermayer; NFLVR in full generality</span></li>
+      <li><a href="https://www.wallstreetoasis.com/forum/trading/the-massive-list-of-tradingquant-questions-sig-jane-street-citadel-goldman" target="_blank" rel="noopener noreferrer">Trading/quant interview question bank</a> <span class="book-author">— SIG, Jane Street, Citadel, Goldman</span></li>
+      <li><a href="https://binguru.net/files/Goldman-Sachs-Reading-List.pdf" target="_blank" rel="noopener noreferrer">Goldman Sachs reading list</a></li>
+      <li><a href="https://www.reddit.com/r/Trading/wiki/index/" target="_blank" rel="noopener noreferrer">r/Trading wiki</a></li>
+    </ul>
 
     <h3 class="genre-heading">Mathematics</h3>
     <ul class="book-list">
-      <li><a href="https://terrytao.wordpress.com/">Terrence Tao's Page</a></li>
-      <li><a href="https://rgsmaths.wordpress.com/wp-content/uploads/2016/06/maths-reading-list-cambridge.pdf">Cambridge Reading List</a></li>
-      <li><a href="https://mml-book.github.io/">Mathematics for Machine Learning</a></li>
-      <li><a href="https://mathblog.com/mathematics-books/">All The Math Books You'll Ever Need</a></li>
-      <li><a href="https://github.com/abivolante/maths">My own notes (mostly summary of some LU modules)</a></li>
-      <li><a href="https://richardhammack.github.io/BookOfProof/Main.pdf#256">Book of Proof, 3rd Edition</a></li>
-      <li><a href="https://nrich.maths.org/recommended-books">Nrich Reading List</a></li>
-      <li><a href="https://www.cs.cornell.edu/jeh/book.pdf">Foundations of Data Science</a></li>
-      <li><a href="https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/">Introduction to Stochastic Processes</a></li>
-      <li><a href="https://terrytao.wordpress.com/2007/06/18/the-lebesgue-differentiation-theorem-and-the-szemeredi-regularity-lemma/">The Lebesgue differentiation theorem and the Szemeredi regularity lemma</a></li>
-      <li><a href="https://www.russell-davidson.research.mcgill.ca/e765/">Economics 765</a></li>
-      <li><a href="https://github.com/yc-liu/readings/blob/master/Steven%20E.%20Shreve%20Stochastic%20Calculus%20for%20Finance%20I%20The%20Binomial%20Asset%20Pricing%20Model%20%202005.pdf">Stochastic Calculus for Finance</a></li>
-      <li><a href="https://www.sciencedirect.com/science/article/pii/0304414981900260">Martingales and stochastic integrals in the theory of continuous trading</a></li>
-      <li><a href="https://people.math.ethz.ch/~delbaen/ftp/preprints/NLB.pdf">The Fundamental Theorem of Asset Pricing for Unbounded Stochastic Processes</a></li>
+      <li><a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener noreferrer">Terence Tao's blog</a> <span class="book-author">— mostly notes for analysis</span></li>
+      <li><a href="https://mml-book.github.io/" target="_blank" rel="noopener noreferrer">Mathematics for Machine Learning</a> </li>
+      <li><a href="https://www.cs.cornell.edu/jeh/book.pdf" target="_blank" rel="noopener noreferrer">Foundations of Data Science</a></li>
+      <li><a href="https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/" target="_blank" rel="noopener noreferrer">Introduction to Stochastic Processes</a> <span class="book-author">— MIT OCW, 18.445</span></li>
+      <li><a href="https://terrytao.wordpress.com/2007/06/18/the-lebesgue-differentiation-theorem-and-the-szemeredi-regularity-lemma/" target="_blank" rel="noopener noreferrer">The Lebesgue differentiation theorem and the Szemerédi regularity lemma</a></li>
+      <li><a href="https://www.russell-davidson.research.mcgill.ca/e765/" target="_blank" rel="noopener noreferrer">Economics 765</a> <span class="book-author">— McGill graduate econometrics notes</span></li>
     </ul>
 
-    <h3 class="genre-heading">Computer Science/Programming</h3>
+    <h3 class="genre-heading">Computer Science &amp; Programming</h3>
     <ul class="book-list">
-      <li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/">Intro to Computer Science and Programming in Python, MIT OpenCourseWare </a></li>
-      <li><a href="https://ocw.mit.edu/courses/1-00-introduction-to-computers-and-engineering-problem-solving-spring-2012/">Introduction to Computers and Engineering Problem Solving, MIT OpenCourseWare</a></li>
-      <li><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/">Mathematics for Computer Science, MIT OpenCourseWare</a></li>
-      <li><a href="https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2005/">Intro to Algorithms, MIT OpenCourseWare</a></li>
-      <li><a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a></li>
-      <li><a href="https://github.com/freeCodeCamp/awesome-quincy-larson-emails">freeCodeCamp Learning Resource</a></li>
-      <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLZoo</a></li>
-      <li><a href="https://github.com/lighthousand/books">More Programming Books</a></li>
-      <li><a href="https://algs4.cs.princeton.edu/home/">Algorithms, 4th Edition</a></li>
-      <li><a href="https://leetcode.com/">Leetcode</a></li>
-      <li><a href="https://projecteuler.net/about">Project Euler</a></li>
-      <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X">Deep Learning, Stanford CS230</a></li>
-      <li><a href="https://github.com/seanprashad/leetcode-patterns">Leetcode Patterns</a></li>
-      <li><a href="https://www.fast.ai/">fast.ai</a></li>
-      <li><a href="https://en.cppreference.com/">cppreference.com</a></li>
-      <li><a href="https://adventofcode.com/">adventofcode.com</a></li>
-      <li><a href="https://www.kaggle.com/learn/pandas">Pandas</a></li>
-      <li><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a></li>
-      <li><a href="https://mystery.knightlab.com/">SQL Murder Mystery</a></li>
-      <li><a href="https://cp-algorithms.com/">Algorithms for Competitive Programming</a></li>
-      <li><a href="https://gustedt.gitlabpages.inria.fr/modern-c/">Modern C</a></li>
-      <li><a href="https://github.com/DataTalksClub/data-engineering-zoomcamp">Data Engineering Zoomcamp</a></li>
-      <li><a href="https://docs.python.org/3/">Python Documentation</a></li>
-      <li><a href="https://soclibrary.futa.edu.ng/books/Fundamentals%20of%20Data%20Engineering%20(Reis,%20JoeHousley,%20Matt)%20(Z-Library).pdf">Fundamentals of Data Engineering</a></li>
-      <li><a href="https://github.com/aasthas2022/SDE-Interview-and-Prep-Roadmap/blob/main/System%20Design/Resources/Designing%20Data%20Intensive%20Applications%20by%20Martin%20Kleppmann.pdf">Designing Data-Intensive Applications</a></li>
-
+      <li><a href="https://teachyourselfcs.com/" target="_blank" rel="noopener noreferrer">Teach Yourself Computer Science</a> <span class="book-author">— curated roadmap through the core CS canon</span></li>
+      <li><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/" target="_blank" rel="noopener noreferrer">Mathematics for Computer Science</a> <span class="book-author">— MIT OCW, 6.042J</span></li>
+      <li><a href="https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2005/" target="_blank" rel="noopener noreferrer">Introduction to Algorithms</a> <span class="book-author">— MIT OCW, 6.046J</span></li>
+      <li><a href="https://algs4.cs.princeton.edu/home/" target="_blank" rel="noopener noreferrer">Algorithms, 4th Edition</a> <span class="book-author">— Sedgewick &amp; Wayne</span></li>
+      <li><a href="https://cp-algorithms.com/" target="_blank" rel="noopener noreferrer">Algorithms for Competitive Programming</a></li>
+      <li><a href="https://github.com/seanprashad/leetcode-patterns" target="_blank" rel="noopener noreferrer">LeetCode Patterns</a></li>
+      <li><a href="https://projecteuler.net/about" target="_blank" rel="noopener noreferrer">Project Euler</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X" target="_blank" rel="noopener noreferrer">Deep Learning</a> <span class="book-author">— Stanford CS230</span></li>
+      <li><a href="https://www.fast.ai/" target="_blank" rel="noopener noreferrer">fast.ai</a></li>
     </ul>
 
-    <h3 class="genre-heading">Random</h3>
+    <h3 class="genre-heading">Random (mostly for myself but fun to browse for anyone)</h3>
     <ul class="book-list">
-      <li><a href="https://www.youtube.com/@numberphile">Numberphile</a></li>
-      <li><a href="https://emmilco.github.io/path_finder/">Pathfinding and Maze-Generation Algorithms</a></li>
-      <li><a href="https://www.onezoom.org/">OneZoom Tree of Life Explorer</a></li>
-      <li><a href="https://www.claymath.org/millennium-problems/">Millennium Prize Problems</a></li>
-      <li><a href="https://lamport.azurewebsites.net/">Leslie Lamport's Page</a></li>
-      <li><a href="https://linkurious.com/blog/anti-money-laundering-use-cases-graph-analytics/">Anti-money laundering use cases for graph analytics</a></li>
-      <li><a href="https://www.ravelin.com/insights/link-analysis-and-graph-database-for-fraud-detection">Link Analysis for Fraud Detection</a></li>
-      <li><a href="https://arxiv.org/pdf/2408.16085">k-planar graphs</a></li>
-      <li><a href="https://www.wallstreetoasis.com/forum/trading/the-massive-list-of-tradingquant-questions-sig-jane-street-citadel-goldman">List of Trading/Quant Questions - SIG, Jane Street, Citadel, Goldman</a></li>
-      <li><a href="https://binguru.net/files/Goldman-Sachs-Reading-List.pdf">Goldman Sachs Reading List</a></li>
-      <li><a href="https://www.reddit.com/r/Trading/wiki/index/">r/Trading/wiki/index</a></li>
-      <li><a href="https://towardsdatascience.com/lebesgue-measure-and-integration-64f5c45d7888-2/">A guide to the Lebesgue measure and integration</a></li>
-      <li><a href="https://www.wikiwand.com/en/Lebesgue_integral#:~:text=intuition%20about%20the%20different%20approaches%20to%20integration">Lebesgue Integral</a></li>
-    </ul>
-
-    <h3 class="genre-heading">Travel</h3>
-    <ul class="book-list">
-    <li><a href="https://bestpragueguide.com/en/blog/prague-budapest-vienna-itinerary">Prague, Budapest, and Vienna — The Perfect 10-Day Itinerary</a></li>
+      <li><a href="https://www.youtube.com/@numberphile" target="_blank" rel="noopener noreferrer">Numberphile</a></li>
+      <li><a href="https://emmilco.github.io/path_finder/" target="_blank" rel="noopener noreferrer">Pathfinding and maze-generation algorithms</a></li>
+      <li><a href="https://www.onezoom.org/" target="_blank" rel="noopener noreferrer">OneZoom Tree of Life Explorer</a> <span class="book-author">— zoomable map of evolutionary relationships</span></li>
+      <li><a href="https://www.claymath.org/millennium-problems/" target="_blank" rel="noopener noreferrer">Millennium Prize Problems</a></li>
+      <li><a href="https://arxiv.org/pdf/2408.16085" target="_blank" rel="noopener noreferrer">k-planar graphs</a> <span class="book-author">— arXiv preprint on crossing-number generalisations</span></li>
     </ul>
 
   </section>
@@ -285,27 +254,49 @@
    </div>
    <p class="section-note">Some interesting topics I found and try to look into.</p>
 
+   <h3 class="genre-heading">Asset Pricing Theory</h3>
    <ul class="book-list">
-     <li>Wavelets and time-frequency analysis</li>
-     <li>K-planar Graphs</li>
-     <li>Fraud ring detection. Relation to matchings</li>
-     <li>Stochastic Processes, Markov Chains, Random Walks, Martingales, Black-Scholes Model, Brownian Motion, and Girsanov's Theorem</li>
-     <li>How lebesgue measure is used for pricing complex derivatives and assessing risk, Radon-Nikodym Theorem</li>
-     <li>Python Monte Carlo Simulation that demonstrates how a discontinuous step payoff converges numerically to its Lebesgue expected value</li>
-     <li>Girsanov's theorem: what happens when we change the underlying measure scales?</li>
-     <li>How to prevent infinite-money loopholes in continuous-time market models: (read intro and NFLVR) <a href="https://people.math.ethz.ch/~delbaen/ftp/preprints/NLB.pdf">The Fundamental Theorem of Asset Pricing for Unbounded Stochastic Processes</a></li>
+     <li>How Lebesgue measure underlies pricing of complex derivatives and risk assessment, via the Radon-Nikodym theorem.</li>
+     <li>Girsanov's theorem: what happens to dynamics when the underlying probability measure is changed.</li>
+     <li>A Python Monte Carlo simulation showing how a discontinuous step payoff converges numerically to its Lebesgue expected value.</li>
+     <li>How to prevent infinite-money loopholes in continuous-time market models — reading the intro and NFLVR condition of the Delbaen &amp; Schachermayer paper (linked under Resources &gt; Finance).</li>
+   </ul>
+
+   <h3 class="genre-heading">Stochastic Processes</h3>
+   <ul class="book-list">
+     <li>Markov chains, random walks, and martingales as a unified toolkit.</li>
+     <li>The Black-Scholes model and Brownian motion as its driving noise.</li>
+   </ul>
+
+   <h3 class="genre-heading">Graph Theory &amp; Applications</h3>
+   <ul class="book-list">
+     <li>K-planar graphs and generalisations of crossing number.</li>
+     <li>Fraud ring detection and its relation to graph matchings.</li>
    </ul>
  </section>
 
+  <!-- ============ PERSONAL INTERESTS ============ -->
+  <section id="personal">
+    <div class="section-head">
+      <h2 class="section-title">Personal</h2>
+    </div>
+
+    <details>
+    <summary class="genre-heading">Travel</span></summary>
+    <ul class="book-list">
+      <li><a href="https://bestpragueguide.com/en/blog/prague-budapest-vienna-itinerary" target="_blank" rel="noopener noreferrer">Prague, Budapest, and Vienna — the perfect 10-day itinerary</a></li>
+    </ul>
+  </details>
+  </section>
 
 </main>
 
 <footer class="wrap">
   <p class="msg">Always happy to talk books, maths, or whatever I'm currently stuck on.</p>
   <div class="links">
-    <a href="https://www.linkedin.com/in/abigail-volante-uk/">LinkedIn</a>
-    <a href="https://github.com/abivolante">GitHub</a>
-    <a href="https://www.goodreads.com/user/show/192479044-abigail-volante">Goodreads</a>
+    <a href="https://www.linkedin.com/in/abigail-volante-uk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/abivolante" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.goodreads.com/user/show/192479044-abigail-volante" target="_blank" rel="noopener noreferrer">Goodreads</a>
   </div>
   <p class="colophon">Last updated — August 2026</p>
 </footer>
