@@ -129,7 +129,7 @@
 
 <h2>Learning to think differently</h2>
 
-<p>One of the things that changed my perspective was when I read about a powerful idea: </p>
+<p>One of the things that changed my perspective was encountering a powerful idea: </p>
 
 <p><em>Many counting problems can, in some sense, be viewed as problems of counting words.</em></p>
 
@@ -146,6 +146,14 @@
 <p>\(RRUURU\)</p>
 
 <p>represents one possible path.</p>
+
+<p>The original geometric problem has now become a problem about counting six-letter words containing exactly three \(R\)'s and three \(U\)'s. We simply choose which three of the six positions contain \(R\)'s:</p>
+
+<p>\[\binom{6}{3}=20\] possible paths.</p>
+
+<p>The important step wasn't calculating \(\binom{6}{3}\). It was deciding that the paths should be represented as strings in the first place.</p>
+
+<p> For the \(10 \times10\) case, we have \(\binom{20}{10}=184,756\) possible paths.</p>
 
 <figure style="text-align: center; margin: 2rem auto; max-width: 500px;">
   <svg viewBox="0 0 420 420" width="100%" role="img" aria-labelledby="grid3-title grid3-desc">
@@ -197,17 +205,9 @@
   </figcaption>
 </figure>
 
-<p>The original geometric problem has now become a problem about counting six-letter words containing exactly three \(R\)'s and three \(U\)'s. We simply choose which three of the six positions contain \(R\)'s:</p>
-
-<p>\[\binom{6}{3}=20\] possible paths.</p>
-
-<p>The important step wasn't calculating \(\binom{6}{3}\). It was deciding that the paths should be represented as strings in the first place.</p>
-
-<p> For the \(10 \times10\) case, we have \(\binom{20}{10}=184,756.\) possible paths.</p>
-
 <p>This way of thinking extends far beyond grid paths. Many combinatorial problems that initially look unrelated are really instances of familiar mathematical structures once we find the right representation.</p>
 
-<p>Assigning three distinct roles to seven distinct people can be viewed as counting the number of functions from a 7-set to a 3-set (each person is mapped to one of the three roles which we know to have) which we know to have a total of \(3^7\) possible functions.
+<p>Assigning three distinct roles to seven distinct people can be viewed as counting the number of functions from a 7-set to a 3-set (each person is mapped to one of the three roles) which we know to have a total of \(3^7\) possible functions.
 </p>
 
 <figure style="max-width: 700px; margin: 2.5rem auto; text-align: center;">
@@ -337,14 +337,11 @@
   </figcaption>
 </figure>
 
- <p> The same idea scales to larger problems. Partitioning 100 distinct objects into six nonempty labelled groups can be viewed as counting surjections from a 100-element set onto a 6-element set. If the groups are unlabelled, the problem instead leads to a <a href="https://mathworld.wolfram.com/StirlingNumberoftheSecondKind.html" target="_blank" rel="noopener noreferrer">Stirling number of the second kind.</a></p>
+ <p> The same idea scales to larger problems. Partitioning 100 distinct objects into six nonempty labelled groups can be viewed as counting surjections from a 100-element set onto a 6-element set. If the groups are unlabelled, the problem instead leads to calculating the <a href="https://mathworld.wolfram.com/StirlingNumberoftheSecondKind.html" target="_blank" rel="noopener noreferrer">Stirling number of the second kind.</a></p>
 
 
 <p>
-  The same idea appears outside elementary counting. When Euler studied the
-  Seven Bridges of Königsberg problem, he represented the physical layout
-  of the city as a graph: the landmasses became vertices and the bridges
-  became edges.
+  The same idea appears outside elementary counting. In the early 18th century, the mathematician Leonhard Euler studied the <a href="https://mathworld.wolfram.com/KoenigsbergBridgeProblem.html" target="_blank" rel="noopener noreferrer">Seven Bridges of Königsberg problem</a>, he represented the physical layout of the city as a graph: the landmasses became vertices and the bridges became edges. The problem was no longer really about bridges. It had become a problem about the structure of a graph. This study of graphs was later developed to become known as <strong>Graph Theory</strong>.
 </p>
 
 <figure>
@@ -385,7 +382,6 @@
   </figcaption>
 </figure>
 
-<p>The problem was no longer really about bridges. It had become a problem about the structure of a graph.</p>
 
 <p>I think this is one of the most beautiful aspects of mathematics. A problem can look completely different depending on the language we use to describe it.</p>
 
@@ -405,7 +401,7 @@
 
 <p>Looking back, it is strange to think that a subject I once felt I wasn't naturally good at became one of the areas of mathematics I enjoy most. That has changed how I interpret mathematics:</p>
 
-<p>Struggling with something doesn't necessarily mean that you aren't suited to it. Sometimes it means that you haven't yet learned how to see the problems in the way it requires.</p>
+<p><em>Struggling with something doesn't necessarily mean that you aren't suited to it. Sometimes it means that you haven't yet learned how to see the problems in the way it requires.</em></p>
 
 <p>For me, that was the difference between looking at a combinatorics problem and seeing a large collection of possibilities, and looking at the same problem and asking:</p>
 
