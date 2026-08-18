@@ -32,8 +32,8 @@
 <nav class="drawer-tabs" aria-label="Sections">
   <div class="wrap">
     <a href="#about">About</a>
-    <a href="#reading">Books</a>
-    <a href="#notes">Maths Notes</a>
+    <a href="#notes">Writing</a>
+    <a href="#Books">Books</a>
     <a href="#resources">Resources</a>
     <a href="#topics">Topics</a>
     <a href="#personal">Personal</a>
@@ -50,7 +50,7 @@
  <p class="section-note">Who's keeping this archive.
  </p>
  <div class="about-layout">
-  <img src="photo.JPG" alt="photo.JPG" class="about-photo">
+  <img src="photos/photo.JPG" alt="photo.JPG" class="about-photo">
   <p class="entry-body" style="max-width: 62ch; font-size: 1.02rem; margin: 0;">
     I'm a Mathematics graduate from Lancaster University, where I focused primarily on
     real and complex analysis, measure theory, and functional analysis. More recently,
@@ -63,10 +63,37 @@
 
 </section>
 
+<!-- ============ WRITING ============ -->
+ <section id="writing">
+   <div class="section-head">
+     <h2 class="section-title">Writing</h2>
+   </div>
+   <p class="section-note">Some notes, essays, and reflections on what I’m learning.</p>
+
+   <h3 class="genre-heading">Published</h3>
+   <div class="essay-list">
+     <div class="essay-row">
+       <time datetime="2026-08-18">Aug 2026</time>
+       <div>
+         <h3><a href="writing/how-I-learned-to-think-combinatorially.html">How I learned to Think Combinatorially</a></h3>
+         <p>A personal account of learning to see structure and patterns in combinatorial problems.</p>
+       </div>
+     </div>
+   </div>
+
+   <h3 class="genre-heading">Ideas</h3>
+   <ul class="book-list">
+     <li>Why measure theory exists at all. What's actually wrong with just using
+       Riemann Integration. Measurable and non-measurable sets including the Vitali set.</li>
+     <li>The idea behind the Riesz Representation Theorem.</li>
+     <li>Cauchy's theorem and the rigidity of holomorphic functions.</li>
+   </ul>
+
+ </section>
 
 
-  <!-- ============ READING ============ -->
- <section id="reading">
+  <!-- ============ Books ============ -->
+ <section id="books">
    <div class="section-head">
      <h2 class="section-title">Books</h2>
    </div>
@@ -168,24 +195,6 @@
  </details>
  </section>
 
- <!-- ============ MATHS NOTES ============ -->
-  <section id="notes">
-    <div class="section-head">
-      <h2 class="section-title">Maths Notes</h2>
-    </div>
-    <p class="section-note">These are some of my favourite topics/proofs in maths. </p>
-
-    <h3 class="genre-heading">Ideas</h3>
-    <ul class="book-list">
-      <li>Why measure theory exists at all. What's actually wrong with just using
-        Riemann Integration. Measurable and non-measurable sets including the Vitali set.</li>
-      <li>The idea behind the Riesz Representation Theorem.</li>
-      <li>Cauchy's theorem and the rigidity of holomorphic functions.</li>
-    </ul>
-
-
-
-  </section>
 
   <!-- ============ RESOURCES ============ -->
   <section id="resources">
@@ -199,6 +208,7 @@
       <li><a href="https://datalemur.com/" target="_blank" rel="noopener noreferrer">DataLemur</a> <span class="book-author">— SQL &amp; analytics interview questions pulled from real FAANG and data-analyst loops</span></li>
       <li><a href="https://www.stratascratch.com/" target="_blank" rel="noopener noreferrer">StrataScratch</a> <span class="book-author">— SQL and Python interview questions from actual data science/analyst interviews</span></li>
       <li><a href="https://mode.com/sql-tutorial/intro-to-intermediate-sql/index.html" target="_blank" rel="noopener noreferrer">Mode's Intermediate &amp; Advanced SQL Tutorial</a></li>
+      <li><a href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank" rel="noopener noreferrer">Data Engineering Zoomcamp</a><span class="book-author">— DataTalksClub; 9-week course on production data pipelines: SQL, Docker, Spark, Kafka, dbt, orchestration</span></li>
     </ul>
 
     <h3 class="genre-heading">Finance</h3>
@@ -232,9 +242,8 @@
       <li><a href="https://cp-algorithms.com/" target="_blank" rel="noopener noreferrer">Algorithms for Competitive Programming</a></li>
       <li><a href="https://github.com/seanprashad/leetcode-patterns" target="_blank" rel="noopener noreferrer">LeetCode Patterns</a></li>
       <li><a href="https://projecteuler.net/about" target="_blank" rel="noopener noreferrer">Project Euler</a></li>
-      <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X" target="_blank" rel="noopener noreferrer">Deep Learning</a> <span class="book-author">— Stanford CS230</span></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X" target="_blank" rel="noopener noreferrer">Deep Learning</a><span class="book-author">— Stanford CS230</span></li>
       <li><a href="https://www.fast.ai/" target="_blank" rel="noopener noreferrer">fast.ai</a></li>
-    </ul>
 
     <h3 class="genre-heading">Random (mostly for myself but fun to browse for anyone)</h3>
     <ul class="book-list">
