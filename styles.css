@@ -459,60 +459,12 @@
 
     mjx-container[display="true"]{ margin: 24px 0 !important; }
 
-    .article-header{ padding: 64px 0 20px; }
-
-    .back-link{
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-      display: inline-block;
-      margin-bottom: 28px;
+    /* When a card-header (page title block) follows an article-header
+       (back-link block), don't stack both top paddings — article-header
+       already provides the top breathing room for the page. */
+    .article-header + .card-header{
+      padding-top: 0;
     }
-    .back-link:hover{ color: var(--accent); }
-
-    .article-meta{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--ink-dim);
-      margin: 0 0 14px;
-    }
-
-    .article-title{
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: clamp(1.9rem, 5vw, 2.6rem);
-      line-height: 1.15;
-      margin: 0 0 32px;
-      color: var(--ink);
-    }
-
-    .article-body{
-      padding-bottom: 90px;
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-
-    .article-body p{ margin: 0 0 22px; }
-
-    .article-body h2{
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 1.35rem;
-      margin: 40px 0 16px;
-      color: var(--ink);
-    }
-
-    .article-body blockquote{
-      margin: 28px 0;
-      padding-left: 20px;
-      border-left: 2px solid var(--line);
-      font-style: italic;
-      color: var(--ink-dim);
-    }
-
-    mjx-container[display="true"]{ margin: 24px 0 !important; }
 
     /* ---------- Form ---------- */
 
