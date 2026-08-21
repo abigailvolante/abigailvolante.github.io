@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abigail Volante</title>
+<title>Abigail Volante — A Personal Archive</title>
 <meta name="description" content="A collection of notes and writing on mathematics.">
 <meta name="google-site-verification" content="dnWclCI3Eb8yzoPDDmGuc9DcSP4Zy4BvUUyiheDyXGc" />
 
@@ -17,12 +17,13 @@
 
 <header class="card-header">
   <div class="wrap">
+  <p class="eyebrow">A Personal Archive </p>
     <h1 class="name">Abigail Volante</h1>
     <p class="tagline">
-      A collection of my notes and writing on mathematics.</p>
+      A running collection of all my notes, ideas, and writing on mathematics.</p>
 
     <div class="meta-line">
-      <span><b>Based in</b> — Blackburn, UK</span>
+      <span><b>Based in</b> — UK</span>
       <span><b>Currently</b> — reading / studying / writing</span>
     </div>
   </div>
@@ -43,17 +44,18 @@
   <!-- ============ ABOUT ============ -->
   <section id="about">
  <div class="section-head">
+   <span class="call-number">920</span>
    <h2 class="section-title">About</h2>
  </div>
- <p class="section-note">Who's keeping this site.
+ <p class="section-note">Who's keeping this archive.
  </p>
  <div class="about-layout">
   <img src="photos/photo.JPG" alt="photo.JPG" class="about-photo">
   <p class="entry-body" style="max-width: 62ch; font-size: 1.02rem; margin: 0;">
     I'm a mathematics graduate from Lancaster University, where I focused primarily on
-    real and complex analysis, measure theory, and functional analysis. I use this site
+    real and complex analysis, measure theory, and functional analysis. I use this blog mainly
     to share my writing, alongside notes and ideas I'm exploring. On the rare occasions I'm away from my whiteboard or the terminal, I like to
-    read, and explore new cafes and restaurants.
+    read and explore new cafes and restaurants.
   </p>
 </div>
 
@@ -62,6 +64,7 @@
 <!-- ============ WRITING ============ -->
  <section id="writing">
    <div class="section-head">
+     <span class="call-number">510.92</span>
      <h2 class="section-title">Writing</h2>
    </div>
    <p class="section-note">Some notes, essays, and reflections on what I've been learning.</p>
@@ -69,9 +72,13 @@
    <h3 class="genre-heading">Published</h3>
    <div class="essay-list">
      <div class="essay-row">
-       <time datetime="2026-08-18">Aug 2026</time>
        <div>
-         <h3><a href="writing/how-I-learned-to-think-combinatorially.html">How I learned to Think Combinatorially</a></h3>
+        <span class="call-number">510.92.01</span>
+        <time datetime="2026-08-18">Aug 2026</time>
+     </div>
+
+       <div>
+         <h3><a href="writing/how-I-learned-to-think-combinatorially.html">How I learned to Think Combinatorially →</a></h3>
          <p>A personal account of learning to see structure and patterns in combinatorial problems.</p>
        </div>
      </div>
@@ -84,26 +91,17 @@
  <!-- ============ TOPICS ============ -->
  <section id="topics">
    <div class="section-head">
+     <span class="call-number">510</span>
      <h2 class="section-title">Topics</h2>
    </div>
    <p class="section-note">Some interesting topics I found and try to look into.</p>
 
-   <h3 class="genre-heading">Pure Mathematics</h3>
    <ul class="book-list">
-     <li>Why measure theory has to ignore some sets. Introduce the notion of 'almost everywhere'</li>
+     <li>The notion of 'almost everywhere' in measure theory.</li>
      <li>The idea behind the Riesz Representation Theorem.</li>
      <li>Cauchy's theorem and the rigidity of holomorphic functions.</li>
-   </ul>
-
-   <h3 class="genre-heading">Probability &amp; Stochastic Processes</h3>
-   <ul class="book-list">
      <li>Markov chains, random walks, and martingales.</li>
      <li>The Black-Scholes model and Brownian motion.</li>
-   </ul>
-
-
-   <h3 class="genre-heading">Graph Theory &amp; Applications</h3>
-   <ul class="book-list">
      <li>K-planar graphs and generalisations of crossing number.</li>
      <li>Fraud ring detection and its relation to graph matchings.</li>
    </ul>
@@ -114,28 +112,58 @@
 
 
   <!-- ============ Books ============ -->
- <section id="books">
-   <div class="section-head">
-     <h2 class="section-title">Books</h2>
-   </div>
-   <p class="section-note">A few books that have shaped my interests.
-   </p>
+  <section id="books"> <div class="section-head"> <span class="call-number">028</span> <h2 class="section-title">Books</h2> </div> <p class="section-note">A few books that have shaped my interests.</p>
 
-   <ul class="book-list">
-     <li>A Mathematician's Apology <span class="book-author">— G. H. Hardy.</span> A must-read for anyone interested in mathematics. It perfectly captured how I felt about doing mathematics.</li>
-     <li>Fermat's Last Theorem <span class="book-author">— Simon Singh.</span> The book that first got me properly interested in number theory.</li>
-     <li>How to Solve It <span class="book-author">— George Pólya.</span> Still the best short thing written on how to actually attack a problem.</li>
-     <li>What Is Mathematics? <span class="book-author">— Richard Courant.</span> One of the books that made me appreciate good mathematical exposition.</li>
-     <li>QED: The Strange Theory of Light and Matter <span class="book-author">— Richard Feynman.</span> A great example of explaining difficult ideas clearly.</li>
-     <li>The Selfish Gene <span class="book-author">— Richard Dawkins.</span> Changed how I think about optimisation outside mathematics.</li>
-     <li>Alex's Adventures in Numberland <span class="book-author">— Alex Bellos.</span> The book I'd give to someone who thinks they're “not a maths person.”</li>
-     <li>The Code Book <span class="book-author">— Simon Singh.</span> My first introduction to cryptography, from ciphers to public-key encryption.</li>
-   </ul>
+ <ul class="book-list"> <li> <span class="book-title">A Mathematician's Apology</span> <span class="book-author">— G. H. Hardy.</span> <span class="book-review">A must-read for anyone interested in pure mathematics. Although some of the ideas are outdated (e.g. how number theory has no applications outside academia), it perfectly captured how I felt about doing mathematics.</span> </li>
+
+ <li>
+   <span class="book-title">Fermat's Last Theorem</span>
+   <span class="book-author">— Simon Singh.</span>
+   <span class="book-review">Along with Hardy's <em>A Mathematician's Apology</em>, this was one of the books that got me properly interested in number theory.</span>
+ </li>
+
+ <li>
+   <span class="book-title">How to Solve It</span>
+   <span class="book-author">— George Pólya.</span>
+   <span class="book-review">An actual practical guide to thinking through mathematical problems and understanding how mathematicians approach them.</span>
+ </li>
+
+ <li>
+   <span class="book-title">What Is Mathematics?</span>
+   <span class="book-author">— Richard Courant.</span>
+   <span class="book-review">I like this one for the way it explains ideas without making them feel simpler than they are.</span>
+ </li>
+
+ <li>
+   <span class="book-title">QED: The Strange Theory of Light and Matter</span>
+   <span class="book-author">— Richard Feynman.</span>
+   <span class="book-review">A great example of explaining difficult ideas clearly.</span>
+ </li>
+
+ <li>
+   <span class="book-title">The Selfish Gene</span>
+   <span class="book-author">— Richard Dawkins.</span>
+   <span class="book-review">This book changed how I think about optimisation outside mathematics.</span>
+ </li>
+
+ <li>
+   <span class="book-title">Alex's Adventures in Numberland</span>
+   <span class="book-author">— Alex Bellos.</span>
+   <span class="book-review">A good choice for anyone who thinks mathematics is only about memorising formulas.</span>
+ </li>
+
+ <li>
+   <span class="book-title">The Code Book</span>
+   <span class="book-author">— Simon Singh.</span>
+   <span class="book-review">This was my first introduction to cryptography, and I was immediately fascinated by it.</span>
+ </li>
+</section>
 
 
   <!-- ============ RESOURCES ============ -->
   <section id="resources">
     <div class="section-head">
+      <span class="call-number">016.51</span>
       <h2 class="section-title">Resources</h2>
     </div>
     <p class="section-note">Some useful books, courses, and sites I currently use.</p>
@@ -146,18 +174,18 @@
       <li><a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener noreferrer">Terence Tao's blog</a> <span class="book-author">— mostly notes for analysis</span></li>
       <li><a href="https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/" target="_blank" rel="noopener noreferrer">Introduction to Stochastic Processes</a> <span class="book-author">— MIT OCW, 18.445</span></li>
       <li><a href="https://www.math.ucdavis.edu/~hunter/measure_theory/measure_theory.html">Measure Theory</a></li>
-      <li><a href="https://jmath2020.neocities.org/DifferentialEquation/PDE/documents/NonlinearDispersionEquation(Tao).pdf">Nonlinear Dispersive Equations — Terence Tao</a></li>
-      <li><a href="https://warwick.ac.uk/fac/sci/statistics/apts/students/resources2324/asp-preliminary-notes.pdf">Applied Stochastic Processes — Warwick</a></li>
+      <li><a href="https://jmath2020.neocities.org/DifferentialEquation/PDE/documents/NonlinearDispersionEquation(Tao).pdf">Nonlinear Dispersive Equations, Terence Tao</a></li>
+      <li><a href="https://warwick.ac.uk/fac/sci/statistics/apts/students/resources2324/asp-preliminary-notes.pdf">Applied Stochastic Processes</a><span class="book-author">— Warwick notes</span></li>
       <li><a href="https://www.dpmms.cam.ac.uk/~cmw50/AoF.pdf">Analysis of Functions</a></li>
-      <li><a href="https://www.dpmms.cam.ac.uk/~az10000/">Advanced Functional Analysis — Cambridge</a></li>
-      <li><a href="https://www.statslab.cam.ac.uk/~mrt31//StoCal/">Stochastic Calculus — Cambridge</a></li>
+      <li><a href="https://www.dpmms.cam.ac.uk/~az10000/">Advanced Functional Analysis</a></li>
+      <li><a href="https://www.statslab.cam.ac.uk/~mrt31//StoCal/">Stochastic Calculus</a></li>
     </ul>
 
     <h3 class="genre-heading">Computer Science &amp; Programming</h3>
     <ul class="book-list">
       <li><a href="https://teachyourselfcs.com/" target="_blank" rel="noopener noreferrer">Teach Yourself Computer Science</a> <span class="book-author">— curated roadmap through the core CS canon</span></li>
       <li><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/" target="_blank" rel="noopener noreferrer">Mathematics for Computer Science</a> <span class="book-author">— MIT OCW, 6.042J</span></li>
-      <li><a href="https://projecteuler.net/about">Project Euler</a></li>
+      <li><a href="https://projecteuler.net/about">Project Euler</a><span class="book-author">— an archive of mathematical/programming problems</span></li>
     </ul>
 
   </section>
@@ -167,7 +195,7 @@
   <p class="msg">I also keep a larger collection of books, resources, and ideas in <a href="https://abigail-volante.notion.site/ebd//3c2488e617828090951ff6bb5a705a01" target="_blank" rel="noopener noreferrer">my notion page</a>. It’s updated more regularly than this site.
   </p>
   <div class="links">
-    <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+    <a href="contact.html">Contact</a>
     <a href="https://www.linkedin.com/in/abigail-volante-uk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     <a href="https://github.com/abivolante" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.goodreads.com/user/show/192479044-abigail-volante" target="_blank" rel="noopener noreferrer">Goodreads</a>
