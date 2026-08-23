@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Can Something Be Everywhere and Still Have Size Zero?</title>
+<meta name="description" content="An exploration of the Lebesgue measure, null sets, and why the rationals can be everywhere in the real line yet have no length.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script>
+
+<style>
+  .article-header{ padding: 64px 0 20px; }
+
+  .back-link{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    display: inline-block;
+    margin-bottom: 28px;
+  }
+  .back-link:hover{ color: var(--accent); }
+
+  .article-meta{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-dim);
+    margin: 0 0 14px;
+  }
+
+  .article-title{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 32px;
+    color: var(--ink);
+  }
+
+  .article-body{
+    padding-bottom: 90px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p{ margin: 0 0 22px; }
+
+  .article-body h2{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+
+  .article-body blockquote{
+    margin: 28px 0;
+    padding-left: 20px;
+    border-left: 2px solid var(--line);
+    font-style: italic;
+    color: var(--ink-dim);
+  }
+
+  mjx-container[display="true"]{ margin: 24px 0 !important; }
+</style>
+</head>
+<body>
+
+<div class="wrap article-header">
+  <a href="../index.html#writing" class="back-link">&larr; Home</a>
+
+  <p class="article-meta">August 2026</p>
+  <!-- Edit the subject/date to match this piece -->
+
+  <h1 class="article-title">How Can Something Be Everywhere and Still Have Size Zero?</h1>
+</div>
+
+<div class="wrap article-body">
+
+<h2>Density vs. Measure</h2>
+
+<p>One of the most intriguing concepts I encountered was the paradoxical idea that something can be everywhere, even infinitely splattered throughout the whole space, but apparently still have <em>size</em> zero. For example, consider the set of rationals \(\mathbb{Q}\). This is everywhere in the real line in the sense that when we take any arbitrary interval, we can always find infinitely many rationals. This property is formally known as being &lsquo;dense&rsquo;, and we say that \(\mathbb{Q}\) is dense in \(\mathbb{R}\). Intuitively, we&rsquo;d assume that any kind of measure on \(\mathbb{Q}\) must be positive &mdash; but in our case, it is in fact zero.</p>
+
+<figure style="text-align: center; margin: 2rem auto; max-width: 560px;">
+  <svg viewBox="0 0 600 220" width="100%" role="img" aria-labelledby="between-title between-desc">
+    <title id="between-title">Density via the betweenness property</title>
+    <desc id="between-desc">
+      Between any two real numbers a rational can always be found, and the
+      same argument can be repeated on the smaller interval that results,
+      producing rationals arbitrarily close together.
+    </desc>
+
+    <g font-family="sans-serif" font-size="14" fill="#111">
+      <line x1="60" y1="40" x2="540" y2="40" stroke="#333" stroke-width="2"/>
+      <circle cx="100" cy="40" r="4"/>
+      <circle cx="500" cy="40" r="4"/>
+      <text x="100" y="26" text-anchor="middle">a</text>
+      <text x="500" y="26" text-anchor="middle">b</text>
+    </g>
+
+    <line x1="100" y1="55" x2="100" y2="90" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="500" y1="55" x2="500" y2="90" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <g font-family="sans-serif" font-size="14" fill="#111">
+      <line x1="60" y1="100" x2="540" y2="100" stroke="#333" stroke-width="2"/>
+      <circle cx="100" cy="100" r="4"/>
+      <circle cx="500" cy="100" r="4"/>
+      <circle cx="230" cy="100" r="4" fill="#dc2626"/>
+      <text x="100" y="86" text-anchor="middle">a</text>
+      <text x="500" y="86" text-anchor="middle">b</text>
+      <text x="230" y="86" text-anchor="middle" fill="#dc2626">q&#8321; &#8712; &#8474;</text>
+    </g>
+
+    <line x1="100" y1="115" x2="100" y2="150" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="230" y1="115" x2="230" y2="150" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <g font-family="sans-serif" font-size="14" fill="#111">
+      <line x1="60" y1="160" x2="270" y2="160" stroke="#333" stroke-width="2"/>
+      <circle cx="100" cy="160" r="4"/>
+      <circle cx="230" cy="160" r="4" fill="#dc2626"/>
+      <circle cx="160" cy="160" r="4" fill="#dc2626"/>
+      <text x="100" y="146" text-anchor="middle">a</text>
+      <text x="230" y="146" text-anchor="middle" fill="#dc2626">q&#8321;</text>
+      <text x="160" y="146" text-anchor="middle" fill="#dc2626">q&#8322; &#8712; &#8474;</text>
+    </g>
+  </svg>
+
+  <figcaption style="font-size: 0.95rem; color: #666; margin-top: 0.75rem;">
+    Between any two reals \(a &lt; b\) there is a rational \(q_1\). Applying
+    the same fact to \(a\) and \(q_1\) gives a rational \(q_2\) even closer
+    to \(a\), and this can be repeated indefinitely &mdash; which is exactly
+    what it means for \(\mathbb{Q}\) to be dense in \(\mathbb{R}\).
+  </figcaption>
+</figure>
+
+<p>This &lsquo;size&rsquo; that we consider is what we call the <a href="https://en.wikipedia.org/wiki/Lebesgue_measure" target="_blank" rel="noopener noreferrer">Lebesgue measure</a>. Think of the Lebesgue measure as a formal way of measuring geometric objects, such as points and intervals from the real line, regions from Euclidean planes, or subsets of Euclidean spaces. Historically, it was developed in pursuit of a rigorous notion of &lsquo;size&rsquo;, as well as to provide a framework for integrating more functions than Riemann integration can handle.</p>
+
+<p>It is in fact the case that having this paradoxical concept of something being everywhere but having no size is a desired consequence of the Lebesgue measure. And even so, we&rsquo;d be wrong to assume that the axioms are strange and have no real-life intuitive sense, because they are in fact very intuitive and are deserving of being called a rigorous notion of size.</p>
+
+<h2>How Lebesgue measure is defined</h2>
+
+<p>Lebesgue measure was formulated based on how we intuitively measure things. The first case is to limit our measure to non-negative real numbers, as our intuition tells us that a measure should always be zero or positive. The simplest case would be an interval. For example, \([a,b]\) is assigned measure \(b-a\). So, if \(m(S)\) stands for the Lebesgue measure of a set \(S\), we say that \(m([a,b]) = b-a\).</p>
+
+<p>Now, when we&rsquo;re given a finite or countable disjoint union of sets, our intuitive notion is to sum up all the measures of the individual sets to measure the whole union. In other words, if \(S_1, S_2, \ldots\) are pairwise disjoint measurable sets, then</p>
+
+<p>\[m(S_1 \cup S_2 \cup \cdots) = m(S_1) + m(S_2) + \cdots\]</p>
+
+<p>This property is called countable additivity, and it is one of the main properties of a measure.</p>
+
+<p>But what if we have sets which overlap in a number of different ways, or sets which are much more complicated than intervals? Here is where the theory gets interesting. We&rsquo;ve already had a formal way to define lengths of intervals, so we may as well use them to measure more complicated sets. One way of doing this is to consider the set&rsquo;s &lsquo;outer measure&rsquo;. Roughly speaking, we cover the set with a countable collection of intervals and look at the total length of those intervals. We then take the infimum over all possible such coverings. Formally, if \(S\) is a subset of the real line, its outer measure is</p>
+
+<p>\[m^*(S) = \inf \left\{ \sum_i m((a_i,b_i)) \; : \; S \subseteq \bigcup_i (a_i,b_i) \right\}.\]</p>
+
+<figure style="text-align: center; margin: 2rem auto; max-width: 560px;">
+  <img
+    src="https://towardsdatascience.com/wp-content/uploads/2021/09/1l2i4wLdqoJkNP8PO-9udRA.png"
+    alt="A set on the real line covered by a countable collection of open intervals, illustrating the definition of outer measure"
+    style="max-width: 100%; height: auto;"
+  >
+  <figcaption style="font-size: 0.95rem; color: #666; margin-top: 0.75rem;">
+    A set covered by a countable collection of open intervals. The outer
+    measure takes the infimum of the total length \(\sum_i (b_i - a_i)\)
+    over every such covering. Image from
+    <a
+      href="https://towardsdatascience.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Towards Data Science</a>.
+  </figcaption>
+</figure>
+
+<p>I won&rsquo;t go into the full technical construction of Lebesgue measure here, but the important idea is that this allows us to extend our intuitive notion of length to much more complicated sets. Not every subset of the real numbers is Lebesgue measurable, but for the sets that are, this outer measure gives us the Lebesgue measure.</p>
+
+<p>Much of the theory of Lebesgue measure is then built around a few basic properties, such as non-negativity, countable additivity, and the fact that the measure of an interval agrees with its usual length.</p>
+
+<h2>Sets with measure zero</h2>
+
+<p>Now that we all formally agree with our notion of measure, let us go back to our initial question. How can \(\mathbb{Q}\) have zero measure?</p>
+
+<p>Let&rsquo;s start with something easy. What is the measure of a point? We obviously want it to be zero, but this is not actually part of our definition. However, we do have our definition of intervals and outer measure. We can simply cover a point, say \(x\), with an interval of length \(\varepsilon\), where \(\varepsilon\) is arbitrary. Since we can make \(\varepsilon\) as small as we want, the infimum of all possible lengths of intervals covering the point is zero. Therefore, \(m(\{x\}) = 0\). So the fact that a point has measure zero is not something we have to assume &mdash; it follows naturally from the way we constructed the measure. A set with Lebesgue measure zero is called a <strong>null set</strong>, and points are our first example of one.</p>
+
+<p>With two points, we can sum up the measures of the individual points, which are both zero. More generally, since a countable union of null sets is still a null set, every countable set has measure zero. Therefore, even though \(\mathbb{Q}\) is countably infinite and dense in \(\mathbb{R}\), we have \(m(\mathbb{Q}) = 0\).</p>
+
+<p>This is where our intuition about &lsquo;size&rsquo; starts to break down. Being large in terms of the number of points it contains is not the same thing as having a large measure. The rationals are everywhere in the real line, but in terms of Lebesgue measure they occupy no length at all.</p>
+
+<p>This leads us to a natural question: are there uncountable sets that have Lebesgue measure zero? For this, we consider the <a href="https://en.wikipedia.org/wiki/Cantor_set" target="_blank" rel="noopener noreferrer">Cantor set</a>.</p>
+
+<p>The Cantor set is defined recursively as follows. Define the set \(I_0 = [0,1]\). Then \(I_1 = [0,1/3] \cup [2/3,1]\), where the interior middle third is removed. Next, \(I_2\) is formed by removing the interior middle third of each of the two intervals in \(I_1\), giving</p>
+
+<p>\[I_2 = [0,\tfrac{1}{9}] \cup [\tfrac{2}{9},\tfrac{1}{3}] \cup [\tfrac{2}{3},\tfrac{7}{9}] \cup [\tfrac{8}{9},1],\]</p>
+
+<p>and so forth. The Cantor set \(C\) is defined as the intersection of all of these sets \(I_0, I_1, I_2, \ldots\). It is actually the case that \(C\) is uncountable. But why does it have measure zero?</p>
+
+<figure style="text-align: center; margin: 2rem auto; max-width: 560px;">
+  <svg viewBox="0 0 600 220" width="100%" role="img" aria-labelledby="cantor-title cantor-desc">
+    <title id="cantor-title">The first four stages of the Cantor set construction</title>
+    <desc id="cantor-desc">
+      Four horizontal bars showing the interval [0,1] with progressively
+      more middle thirds removed at each stage.
+    </desc>
+
+    <g font-family="sans-serif" font-size="14" fill="#666">
+      <text x="20" y="24">I&#8320;</text>
+      <text x="20" y="74">I&#8321;</text>
+      <text x="20" y="124">I&#8322;</text>
+      <text x="20" y="174">I&#8323;</text>
+    </g>
+
+    <g stroke="#5B6B8C" stroke-width="8" stroke-linecap="butt">
+      <line x1="60" y1="20" x2="560" y2="20"/>
+
+      <line x1="60" y1="70" x2="226.7" y2="70"/>
+      <line x1="393.3" y1="70" x2="560" y2="70"/>
+
+      <line x1="60" y1="120" x2="115.6" y2="120"/>
+      <line x1="171.1" y1="120" x2="226.7" y2="120"/>
+      <line x1="393.3" y1="120" x2="448.9" y2="120"/>
+      <line x1="504.4" y1="120" x2="560" y2="120"/>
+
+      <line x1="60" y1="170" x2="78.5" y2="170"/>
+      <line x1="97.1" y1="170" x2="115.6" y2="170"/>
+      <line x1="152.6" y1="170" x2="171.1" y2="170"/>
+      <line x1="189.6" y1="170" x2="226.7" y2="170"/>
+      <line x1="393.3" y1="170" x2="411.9" y2="170"/>
+      <line x1="430.4" y1="170" x2="448.9" y2="170"/>
+      <line x1="486" y1="170" x2="504.4" y2="170"/>
+      <line x1="522.9" y1="170" x2="560" y2="170"/>
+    </g>
+  </svg>
+
+  <figcaption style="font-size: 0.95rem; color: #666; margin-top: 0.75rem;">
+    The first four stages of the Cantor set construction. At each stage, the
+    middle third of every remaining interval is removed.
+  </figcaption>
+</figure>
+
+<p>We can answer this by calculating the total measure that has been removed from the original interval \([0,1]\), which has measure \(1\). Our aim is to show that the total measure removed is \(1\).</p>
+
+<p>We start by removing an interval of length \(1/3\). At the next stage, we remove two intervals of length \(1/9\), giving a total of \(2/9\). At the following stage, we remove four intervals of length \(1/27\), giving \(4/27\), and so forth. Therefore, the total measure removed is</p>
+
+<p>\[\frac{1}{3} + \frac{2}{9} + \frac{4}{27} + \frac{8}{81} + \cdots\]</p>
+
+<p>This can be written as</p>
+
+<p>\[\frac{1}{3}\left(1 + \frac{2}{3} + \left(\frac{2}{3}\right)^2 + \left(\frac{2}{3}\right)^3 + \cdots\right).\]</p>
+
+<p>Using the geometric series formula, this sum is equal to \(1\). Therefore, the total measure removed from \([0,1]\) is \(1\), leaving the Cantor set with measure zero.</p>
+
+<p>So we now have an uncountable set which has measure zero. This shows that even the number of points in a set is not enough to tell us its measure. Measure is really giving us a different notion of &lsquo;size&rsquo;.</p>
+
+<h2>Why is this relevant?</h2>
+
+<p>Null sets turn out to be useful for more than just showing that \(\mathbb{Q}\) has measure zero. In Lebesgue theory, they allow us, in a way, to group together functions according to whether their values differ only on a null set or not. Here&rsquo;s an example. Consider the zero function</p>
+
+<p>\[f(x) = 0 \text{ for all } x\]</p>
+
+<p>and</p>
+
+<p>\[g(x) = 0 \text{ for all } x \neq 0, \quad g(0) = 1.\]</p>
+
+<p>Here \(f\) and \(g\) differ only at \(x = 0\), or on the set \(\{0\}\), which is a null set. So although \(f\) and \(g\) are technically different functions, in Lebesgue theory we can regard them as equivalent. We can also say that \(f = g\) almost everywhere. In general, a property which holds for all \(x \in X \setminus N\), where \(N\) is a null set, is said to hold <strong>almost everywhere</strong>, or a.e. for short.</p>
+
+<p>We can define an equivalence relation on the set of measurable functions by saying that two functions are equivalent if they are equal almost everywhere. But what kind of properties can we infer from each group? This is where the notion of Lebesgue integration becomes particularly interesting when compared with Riemann integration.</p>
+
+<p>If \(f = g\) almost everywhere, then their Lebesgue integrals are equal, provided the relevant integrals exist.</p>
+
+<p>Another good example is the <a href="https://en.wikipedia.org/wiki/Dirichlet_function" target="_blank" rel="noopener noreferrer">Dirichlet function</a>:</p>
+
+<p>\[D(x) = \begin{cases} 1 & x \in \mathbb{Q} \\ 0 & x \notin \mathbb{Q} \end{cases}\]</p>
+
+<p>Now, since we&rsquo;ve shown that \(\mathbb{Q}\) is a null set, we can say that \(D\) is the zero function almost everywhere. Since \(D\) and the zero function are equal almost everywhere, we therefore have</p>
+
+<p>\[\int_0^1 D(x)\, dx = \int_0^1 0\, dx = 0.\]</p>
+
+<p>However, notice that \(D\) is not even Riemann integrable. The reason is that every interval contains both rational and irrational numbers, so every upper Riemann sum is \(1\) while every lower Riemann sum is \(0\).</p>
+
+<p>This gives us an interesting difference between the two theories. From the point of view of Lebesgue integration, the fact that \(D\) takes the value \(1\) on the rationals is irrelevant because the rationals have measure zero. Riemann integration, however, cannot integrate \(D\) at all.</p>
+
+<p>So the idea of a null set is not just about saying that a point has &lsquo;size zero&rsquo;. It gives us a way of deciding which differences between functions are significant and which can be ignored when doing analysis.</p>
+
+<p>But this idea is not only relevant to integration. The idea of almost everywhere equality appears throughout Lebesgue theory and analysis. For example, if two functions are equal almost everywhere and one is measurable, then the other is also measurable under the usual assumptions. This means that changing a measurable function on a null set does not destroy its measurability.</p>
+
+<p>It is also important when defining \(L^p\) spaces. In these spaces, functions which differ only on a null set are treated as the same element. This might seem strange at first, since they are technically different functions, but from the point of view of the \(L^p\) norm, their difference has size zero.</p>
+
+<p>The same idea also appears in probability, where we use the term <strong>almost surely</strong> instead of almost everywhere. If two random variables are equal almost surely, then they are essentially treated as the same for many purposes. Almost everywhere convergence is also an important type of convergence in analysis and appears in major results such as the Dominated Convergence Theorem and the Monotone Convergence Theorem.</p>
+
+<p>So null sets are not just a technical definition used to make Lebesgue integration work. The idea that we can ignore what happens on a set of measure zero appears throughout modern analysis. This is why the concept of <em>almost everywhere</em> becomes so important: it gives us a precise way of saying that two objects may be different, but that their difference is mathematically negligible.</p>
+
+<h2>References</h2>
+
+<p style="font-size: 0.95rem; color: #666;">
+  Terence Tao, <a href="https://terrytao.wordpress.com/2010/09/09/245a-notes-1-lebesgue-measure/" target="_blank" rel="noopener noreferrer">&ldquo;245A, Notes 1: Lebesgue measure&rdquo;</a>.<br>
+  John K. Hunter, <a href="https://www.math.ucdavis.edu/~hunter/measure_theory/measure_theory.html" target="_blank" rel="noopener noreferrer">&ldquo;Measure Theory&rdquo;</a>, UC Davis lecture notes.
+</p>
+
+</div>
+
+</body>
+</html>
