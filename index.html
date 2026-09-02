@@ -6,7 +6,6 @@
 <title>Abigail Volante</title>
 <meta name="description" content="A collection of notes and writing on mathematics.">
 <meta name="google-site-verification" content="dnWclCI3Eb8yzoPDDmGuc9DcSP4Zy4BvUUyiheDyXGc" />
-<meta name="robots" content="noimageindex">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +20,6 @@
     <h1 class="name">Abigail Volante</h1>
     <div class="meta-line">
       <span><b>Based in</b> — UK</span>
-      <span><b>Currently</b> — studying / writing</span>
     </div>
   </div>
 </header>
@@ -33,6 +31,7 @@
     <a href="#topics">Topics</a>
     <a href="#books">Books</a>
     <a href="#resources">Resources</a>
+    <a href="#updates">Updates</a>
   </div>
 </nav>
 
@@ -44,7 +43,6 @@
    <span class="call-number">510.92</span>
    <h2 class="section-title">About</h2>
 </div>
- <p class="section-note">Who's keeping this archive. </p>
     <div class="about–layout"
         <p class="entry-body" style="margin: 0 0 16px;">
           I'm a mathematics graduate from Lancaster University, where I focused on analysis, measure theory, and discrete mathematics.
@@ -59,6 +57,8 @@
 
 
 </section>
+
+
 
 <!-- ============ WRITING ============ -->
 <section id="writing">
@@ -193,6 +193,48 @@
     </ul>
 
   </section>
+
+  <!-- ============ UPDATES ============ -->
+  <section id="updates">
+    <div class="section-head">
+      <span class="call-number">378</span>
+      <h2 class="section-title">Updates</h2>
+    </div>
+    <p class="section-note">A few academic updates</p>
+
+    <div class="update-list">
+
+      <div class="update-row">
+        <img class="update-photo" src="images/updates/graduation.jpg"
+             alt="Photo from graduation"
+             tabindex="0" role="button" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)">
+        <div class="essay-meta">
+          <span class="call-number">378.2</span>
+          <time datetime="2026-08-01">July 2026</time>
+        </div>
+        <div class="update-body">
+          <h3>Graduated from Lancaster Universtiy</h3>
+          <p>Officially graduated from Lancaster University, earning my BSc after four years of studying. A very strange feeling to finally be finished, but a nice way to round off a really memorable few years.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <img class="update-photo" src="images/updates/lms.jpeg"
+             alt="Photo from summer school"
+             tabindex="0" role="button" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)">
+        <div class="essay-meta">
+          <span class="call-number">378.1</span>
+          <time datetime="2026-06-01">Aug 2025</time>
+        </div>
+        <div class="update-body">
+          <h3>Attended the 2025 LMS Summer School</h3>
+          <p>I spent two weeks at the University of Bath for the 2025 LMS Summer School, learning about topics such as knot theory, epidemic modelling, and random walks. It was a really enjoyable couple of weeks and a nice chance to explore some areas of maths I hadn’t come across before. </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <section id="contact">
@@ -208,5 +250,70 @@
   <p class="colophon">Last updated — August 2026</p>
 </footer>
 </section>
+<div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">Close ✕</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" onclick="event.stopPropagation(); prevImage()" aria-label="Previous photo">‹</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+  <button class="lightbox-arrow lightbox-next" id="lightbox-next" onclick="event.stopPropagation(); nextImage()" aria-label="Next photo">›</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+  var currentGallery = [];
+  var currentIndex = 0;
+
+  function openLightbox(el){
+    var raw = el.getAttribute('data-gallery');
+    currentGallery = raw ? JSON.parse(raw) : [el.src];
+    currentIndex = currentGallery.indexOf(el.src);
+    if (currentIndex === -1) currentIndex = 0;
+
+    var lb = document.getElementById('lightbox');
+    showLightboxImage();
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+
+  function showLightboxImage(){
+    var img = document.getElementById('lightbox-img');
+    img.src = currentGallery[currentIndex];
+
+    var multi = currentGallery.length > 1;
+    document.getElementById('lightbox-prev').style.display = multi ? 'block' : 'none';
+    document.getElementById('lightbox-next').style.display = multi ? 'block' : 'none';
+
+    var counter = document.getElementById('lightbox-counter');
+    if (multi){
+      counter.style.display = 'block';
+      counter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+    } else {
+      counter.style.display = 'none';
+    }
+  }
+
+  function nextImage(){
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    showLightboxImage();
+  }
+
+  function prevImage(){
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    showLightboxImage();
+  }
+
+  function closeLightbox(){
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
+    lb.setAttribute('aria-hidden', 'true');
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+</script>
+
 </body>
 </html>
