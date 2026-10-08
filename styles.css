@@ -216,10 +216,9 @@ h2.section-title{
   line-height: 1.55;
 }
 
-/* ---------- Post list (Writing & Blog) ---------- */
+/* ---------- Post list (Writing) ---------- */
 /* Each entry is a boxed card: call number + date, title, a short
-   excerpt, and a "Read more" link — used on both writing.html and
-   blog.html so the two feel like the same kind of page. */
+   excerpt, and a "Read more" link. */
 
 .post-list{
   display: grid;
