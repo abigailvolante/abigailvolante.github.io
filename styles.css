@@ -191,7 +191,7 @@ h2.section-title{
 
 @media (max-width: 620px){
   .about-layout{ grid-template-columns: 1fr; gap: 28px; }
-  .about-photo{ order: -1; max-width: 200px; }
+  .about-photo{ order: -1; max-width: 200px; margin: 0 auto; }
 }
 
 /* ---------- Adventures (photo collage) ---------- */
@@ -461,6 +461,33 @@ footer.site-footer{
   border-left: 2px solid var(--line);
   font-style: italic;
   color: var(--ink-dim);
+}
+
+.article-body h3{
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 32px 0 12px;
+  color: var(--ink);
+}
+
+/* Diagrams: white image backgrounds blend into the page colour */
+.article-body figure{ margin: 28px 0; }
+
+.article-body figure img{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.article-body figcaption{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-dim);
+  margin-top: 10px;
+  text-align: center;
 }
 
 mjx-container[display="true"]{ margin: 24px 0 !important; }

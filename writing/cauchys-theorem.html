@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cauchy's Theorem — Abigail Volante</title>
+<meta name="description" content="An introduction to Cauchy's Theorem, its geometric idea, and consequences such as the Integral Formula and Liouville's Theorem.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script>
+</head>
+<body>
+
+<header class="wrap article-header">
+  <a href="../index.html" class="back-link">&larr; Writing</a>
+  <p class="article-meta">October 2026</p>
+  <h1 class="article-title">Cauchy's Theorem: The Surprising Power of Complex Differentiability</h1>
+</header>
+
+<main class="wrap article-body">
+
+  <p>
+    One of the central results in complex analysis is Cauchy's Theorem, and it's also one of the results I found most striking. After years of studying mathematics, I had often encountered elegant theorems, but this one felt surprising and powerful in a different way. When I first came across it, the conclusion seemed almost too perfect. It stood out from many of the theorems I'd studied before, and hence this I feel deserves an article of its own.
+  </p>
+
+  <h2>Preliminaries</h2>
+
+  <p>
+    Before stating the theorem, it is useful to establish some of the terminology. There are several versions of Cauchy's Theorem, depending on the assumptions made about the contour and the domain. I will focus on the classical version for a simple closed contour.
+  </p>
+
+  <p>
+  A <em>path</em> is a piecewise continuously differentiable function \(\Gamma:[a,b]\to\mathbb{C}\). A <em>contour</em> is a closed path, and is called <em>simple</em> if it does not intersect itself, apart from its matching endpoints.
+  </p>
+
+  <figure>
+    <img src="../images/cauchy/path.jpg"
+         alt="Illustration of a path in the complex plane"
+         width="400" height="400" loading="lazy" decoding="async">
+    <figcaption>Illustration of a path in the complex plane.</figcaption>
+  </figure>
+
+  <p>
+    By the <a href="https://en.wikipedia.org/wiki/Jordan_curve_theorem" target="_blank" rel="noopener noreferrer">Jordan curve theorem</a>, a simple closed curve separates the complex plane into two connected components: a bounded interior and an unbounded exterior.
+  </p>
+
+  <p>
+    We also need the notion of holomorphicity. Let \(U \subseteq \mathbb{C}\) be an open set. A function \(f:U\to\mathbb{C}\) is said to be <em>holomorphic</em> if its complex derivative exists at every point \(z_0\in U\). That is,
+  </p>
+
+  <p>
+    \[
+    f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.
+    \]
+  </p>
+
+  <p>
+    When we say that a complex function \(f\) is holomorphic <em>on and inside</em> a simple contour \(\Gamma\), we mean that \(f\) is defined and holomorphic on an open set containing both \(\Gamma\) and its interior.
+  </p>
+
+  <h2>Cauchy's Theorem</h2>
+
+  <p>
+    We can now state the theorem.
+  </p>
+
+  <blockquote>
+    <strong>Cauchy's Theorem.</strong>
+    Let \(\Gamma\) be a simple, closed, piecewise continuously differentiable contour, and let \(D\) denote its interior. If \(f\) is holomorphic on an open neighbourhood of \(\overline{D}\), then
+    \[
+    \oint_\Gamma f(z)\,dz=0.
+    \]
+  </blockquote>
+
+  <p>
+    It looks rather strange when you first see it. So, if I manage to find a region containing my contour and its interior, on which \(f\) is holomorphic, I can just say that the integral over that contour is zero?
+  </p>
+
+  <p>
+    Yes! And perhaps one of the most interesting things about this result is that the shape of the contour does not matter. It could be a circle, a square, or some rather awkward closed curve. As long as the conditions of the theorem are satisfied, the integral vanishes.
+  </p>
+
+  <h2>Understanding the proof</h2>
+
+  <p>
+    The proof of Cauchy's Theorem can be approached by first considering a simpler class of regions and then extending the result to more general domains. One useful idea is that of a starlike region.
+  </p>
+
+  <p>
+    A region \(D\subseteq\mathbb{C}\) is called <em>starlike</em> if there exists a point \(a\in D\), called a star centre, such that for every \(z\in D\), the line segment joining \(a\) to \(z\) lies entirely within \(D\).
+  </p>
+
+  <p>
+    In other words, from the point \(a\), we can draw a straight line to every other point in the region without leaving it. A disk is a simple example of a starlike region.
+  </p>
+
+  <figure>
+    <img src="../images/cauchy/starlike-region.jpg"
+         alt="A starlike region with its star centre and line segments joining the centre to points on the boundary"
+         width="400" height="400" loading="lazy" decoding="async">
+    <figcaption>Starlike region with star centre \(a\).</figcaption>
+  </figure>
+
+  <p>
+    The starting point is the case of a triangle, known as Goursat's lemma: if \(f\) is holomorphic on an open set containing a closed triangle \(T\), then \(\oint_{\partial T} f(z)\,dz=0\). I will not prove this here, but it is the basic building block.
+  </p>
+
+  <p>
+    For a polygonal starlike region, we can join the star centre to its vertices, dividing the region into triangles. Applying Goursat's lemma to each triangle, the integrals along the internal edges cancel because each shared edge is traversed in opposite directions. This leaves only the integral along the original boundary.
+  </p>
+
+  <p>
+    For a polygonal starlike region, we can join the star centre to its vertices, dividing the region into triangles. Applying the triangle version of Cauchy's theorem to each triangle, the integrals along the internal edges cancel because each shared edge is traversed in opposite directions. This leaves only the integral along the original boundary.
+  </p>
+
+  <p>
+    We can extend this geometric idea to more general regions by subdividing them into smaller pieces using cross-cuts. If we subdivide finely enough, each piece lies inside a disc on which \(f\) is holomorphic, and a disc is starlike. This is possible because the closed region is compact. Cauchy's Theorem can then be applied to the boundary of each piece.
+  </p>
+
+  <figure>
+    <img src="../images/cauchy/region-subdivision.jpg"
+         alt="A region subdivided into smaller regions by internal cross-cuts"
+         width="400" height="400" loading="lazy" decoding="async">
+    <figcaption>Subdividing a region into smaller pieces. Contributions along shared internal boundaries cancel.</figcaption>
+  </figure>
+
+  <p>
+    Suppose the resulting contours are \(\Gamma_1,\Gamma_2,\ldots,\Gamma_n\). By Cauchy's Theorem,
+  </p>
+
+  <p>
+    \[
+    \oint_{\Gamma_j}f(z)\,dz=0,
+    \qquad j=1,\ldots,n.
+    \]
+  </p>
+
+  <p>
+    Adding these integrals together gives
+  </p>
+
+  <p>
+    \[
+    \begin{aligned}
+    \oint_\Gamma f(z)\,dz
+    &=\oint_{\Gamma_1}f(z)\,dz
+    +\oint_{\Gamma_2}f(z)\,dz
+    +\cdots
+    +\oint_{\Gamma_n}f(z)\,dz\\
+    &=0.
+    \end{aligned}
+    \]
+  </p>
+
+  <p>
+    The reason this works is that the internal boundaries are traversed twice, but in opposite directions. Recall that reversing the orientation of a contour changes the sign of its integral:
+  </p>
+
+  <p>
+    \[
+    \int_{-\gamma}f(z)\,dz=-\int_\gamma f(z)\,dz.
+    \]
+  </p>
+
+  <p>
+    Consequently, all the contributions from the internal boundaries cancel, leaving only the integral over the original contour. This is the underlying idea behind the subdivision argument.
+  </p>
+
+  <p>
+    This is a geometric outline of the argument rather than a complete proof for every possible domain. A fully rigorous treatment requires justifying the subdivision and the relevant assumptions. Nevertheless, the cancellation of internal boundaries is a useful way to understand why the theorem holds.
+  </p>
+
+  <h2>Implications</h2>
+
+  <p>
+    Perhaps even more remarkable than the theorem itself are the results that follow from it. One of the most important is Cauchy's Integral Formula.
+  </p>
+
+  <h3>Cauchy's Integral Formula</h3>
+
+  <p>
+    <strong>Cauchy's Integral Formula.</strong> Let \(f\) be holomorphic on and inside the circular contour \(\Gamma=C(z_0,r)\), traversed once anticlockwise. Then, for every point \(a\) inside \(\Gamma\),
+  </p>
+
+  <p>
+    \[
+    f(a)=\frac{1}{2\pi i}\oint_\Gamma
+    \frac{f(z)}{z-a}\,dz.
+    \]
+  </p>
+
+  <p>
+    This formula allows us to determine the value of a holomorphic function at any interior point entirely from its values along the boundary. In other words, knowing the function on the circle is enough to recover its value anywhere inside.
+  </p>
+
+  <p>
+    The formula follows from Cauchy's Theorem. The function \(g(z)=f(z)/(z-a)\) is holomorphic everywhere on and inside \(\Gamma\) except at \(a\), so we cannot apply the theorem directly. Instead, we draw a small circle \(\Delta\) around \(a\) and join it to \(\Gamma\) by two cross-cuts, which splits the region between the two circles into two pieces.
+  </p>
+
+<figure>
+  <img src="../images/cauchy/integral-formula-contour.jpg"
+       alt="Two concentric circles, with the outer circle split into halves Γ1 and Γ2 and the inner circle around the point a split into halves Δ1 and Δ2, joined by two pairs of cross-cuts"
+       width="400" height="400" loading="lazy" decoding="async">
+  <figcaption>The region between \(\Gamma\) and a small circle \(\Delta\) around \(a\), cut into two pieces by cross-cuts.</figcaption>
+</figure>
+
+<p>
+  The function \(g\) is holomorphic on and inside each piece, so Cauchy's Theorem gives
+</p>
+
+<p>
+  \[
+  \begin{aligned}
+  \oint_{\Gamma_1}g\,dz+\oint_{\eta_1}g\,dz+\oint_{-\Delta_1}g\,dz+\oint_{\gamma_1}g\,dz&=0,\\
+  \oint_{\Gamma_2}g\,dz+\oint_{\eta_2}g\,dz+\oint_{-\Delta_2}g\,dz+\oint_{\gamma_2}g\,dz&=0.
+  \end{aligned}
+  \]
+</p>
+
+<p>
+  Adding these, each cross-cut is traversed once in each direction, so the contributions along \(\gamma_1,\gamma_2,\eta_1,\eta_2\) cancel. What remains is
+</p>
+
+<p>
+  \[
+  \oint_\Gamma \frac{f(z)}{z-a}\,dz=\oint_\Delta \frac{f(z)}{z-a}\,dz.
+  \]
+</p>
+
+<p>
+  On the small circle, \(f(z)\) is almost equal to \(f(a)\), and \(\oint_\Delta\frac{dz}{z-a}=2\pi i\). Writing \(f(z)=f(a)+\big(f(z)-f(a)\big)\), the first part contributes \(2\pi i\,f(a)\). If \(\Delta\) has radius \(\varepsilon\), continuity of \(f\) at \(a\) means that for any \(\delta>0\) we have \(|f(z)-f(a)|<\delta\) on \(\Delta\) once \(\varepsilon\) is small enough. The second part is then at most \(\frac{\delta}{\varepsilon}\cdot 2\pi\varepsilon=2\pi\delta\). Since \(\delta\) was arbitrary, the second part tends to \(0\), giving \(\oint_\Gamma \frac{f(z)}{z-a}\,dz=2\pi i\,f(a)\).
+</p>
+
+  <h3>Infinite differentiability</h3>
+
+  <p>
+    Cauchy's Integral Formula has another remarkable consequence. With \(\Gamma\) and \(a\) as above, differentiating under the integral sign gives, for every \(n\geq 0\),
+  </p>
+
+  <p>
+    \[
+    f^{(n)}(a)=\frac{n!}{2\pi i}
+    \oint_\Gamma\frac{f(z)}{(z-a)^{n+1}}\,dz.
+    \]
+  </p>
+
+  <p>
+    This tells us that a holomorphic function is not merely differentiable once. It is infinitely differentiable. With a little more work, expanding \(\frac{1}{z-a}\) as a geometric series inside the Integral Formula, one can show that it can also be represented locally by a convergent power series. This is a particularly striking feature of complex differentiability.
+  </p>
+
+  <p>
+    In real analysis, differentiability alone does not even guarantee that the derivative is continuous. For example, consider
+  </p>
+
+  <p>
+    \[
+    f(x)=
+    \begin{cases}
+    x^2\sin(1/x^2), & x\neq 0,\\
+    0, & x=0.
+    \end{cases}
+    \]
+  </p>
+
+  <p>
+    This function is differentiable at \(0\) with \(f'(0)=0\). For \(x\neq 0\),
+  </p>
+
+  <p>
+    \[
+    f'(x)=2x\sin\!\left(\frac{1}{x^2}\right)-\frac{2}{x}\cos\!\left(\frac{1}{x^2}\right),
+    \]
+  </p>
+
+  <p>
+    which is unbounded near \(0\), so \(f'\) is not continuous there. Complex differentiability, on the other hand, imposes much stronger restrictions on a function.
+  </p>
+
+  <h3>Liouville's Theorem</h3>
+
+  <p>
+    Another beautiful consequence is Liouville's Theorem:
+  </p>
+
+  <blockquote>
+    <strong>Liouville's Theorem.</strong>
+    Every bounded entire function is constant.
+  </blockquote>
+
+  <p>
+    Recall that an entire function is a function that is holomorphic on the whole complex plane. At first, the statement may seem surprising. Why should being bounded force a function to be constant?
+  </p>
+
+  <p>
+    The result follows quite elegantly from Cauchy's Integral Formula. Suppose \(f\) is entire and bounded, so that \(|f(z)|\leq M\) for some constant \(M>0\) and all \(z\in\mathbb{C}\).
+  </p>
+
+  <p>
+    Applying the derivative formula with \(n=1\) to the circle of radius \(R\) centred at an arbitrary point \(a\), we obtain
+  </p>
+
+  <p>
+    \[
+    |f'(a)|\leq \frac{M}{R}.
+    \]
+  </p>
+
+  <p>
+    Since \(f\) is entire, we can choose \(R\) to be arbitrarily large. Letting \(R\to\infty\), we get
+  </p>
+
+  <p>
+    \[
+    |f'(a)|=0.
+    \]
+  </p>
+
+  <p>
+    Since \(a\) was arbitrary, \(f'\) vanishes everywhere, and therefore \(f\) must be constant.
+  </p>
+
+  <p>
+    It is quite remarkable that such a strong conclusion follows from a seemingly simple condition on the function.
+  </p>
+
+  <h2>Final thoughts</h2>
+
+  <p>
+    Cauchy's Theorem is one of those results that demonstrates just how much structure is hidden within complex differentiability. Starting from the condition that a function is holomorphic, we obtain a vanishing contour integral, an integral formula, infinite differentiability, and ultimately results such as Liouville's Theorem.
+  </p>
+
+</main>
+
+</body>
+</html>
