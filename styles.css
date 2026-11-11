@@ -9,7 +9,7 @@
   --body: 'Newsreader', serif;
   --mono: 'IBM Plex Mono', monospace;
 
-  --max-w: 720px;
+  --max-w: 1000px;
 }
 
 body{
@@ -59,7 +59,7 @@ h1.name{
   font-style: italic;
   font-size: 1.1rem;
   color: var(--ink-dim);
-  max-width: 50ch;
+  max-width: 70ch;
   margin: 0 0 40px;
 }
 
@@ -163,7 +163,7 @@ h2.section-title{
 
 .about-body p{
   margin: 0 0 16px;
-  max-width: 56ch;
+  max-width: 72ch;
   line-height: 1.75;
   font-size: 1.02rem;
 }
@@ -172,9 +172,9 @@ h2.section-title{
 
 .about-layout{
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;  /* wider photo column */
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 40px;
-  align-items: stretch;                         /* photo column matches text height */
+  align-items: start;
 }
 
 .about-photo{ margin: 0; }
@@ -182,11 +182,20 @@ h2.section-title{
 .about-photo img{
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 275px;        /* keeps it portrait even if the text is short */
-  object-fit: cover;        /* crops to fill the frame instead of stretching */
-  object-position: center top;   /* keeps faces in view; try "center" if needed */
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
   border-radius: 2px;
+}
+
+.collage figcaption,
+.about-photo figcaption{
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  margin-top: 6px;
 }
 
 @media (max-width: 620px){
@@ -332,7 +341,7 @@ h2.section-title{
   margin: 0 0 14px;
   color: var(--ink-dim);
   font-size: 0.98rem;
-  max-width: 56ch;
+  max-width: 72ch;
   line-height: 1.65;
 }
 
@@ -410,7 +419,7 @@ footer.site-footer{
 
 /* ---------- Article / sub-pages ---------- */
 
-.article-header{ padding: 64px 0 20px; }
+.article-header{ padding: 64px 0 0px; }
 
 .back-link{
   font-family: var(--mono);
@@ -431,15 +440,18 @@ footer.site-footer{
 }
 
 .article-title{
+  max-width: 720px;
   font-family: var(--display);
   font-weight: 600;
   font-size: clamp(1.9rem, 5vw, 2.6rem);
   line-height: 1.15;
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   color: var(--ink);
 }
+.article-header,
 
 .article-body{
+  max-width: 760px;
   padding-bottom: 90px;
   font-size: 1.05rem;
   line-height: 1.75;
