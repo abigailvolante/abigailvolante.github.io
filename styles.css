@@ -17,7 +17,7 @@ body{
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.65;
 }
 
@@ -172,9 +172,9 @@ h2.section-title{
 
 .about-layout{
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1fr) 340px;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;                         /* photo column matches text height */
 }
 
 .about-photo{ margin: 0; }
@@ -183,31 +183,43 @@ h2.section-title{
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;       /* portrait frame */
+  object-fit: cover;         /* crops instead of stretching */
   object-position: center;
   border-radius: 2px;
 }
 
-.collage figcaption,
 .about-photo figcaption{
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   color: var(--ink-dim);
-  margin-top: 6px;
+  margin-top: 8px;
+}
+
+.about-body h2{
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 40px 0 14px;
+  color: var(--ink);
+}
+
+.about-body p.lead{
+  font-size: 1.15rem;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 620px){
   .about-layout{ grid-template-columns: 1fr; gap: 0; }
 
-  .about-body{ display: contents; }
-  .about-body > *{ order: 2; }
-  .about-body > .lead{ order: 0; }
-  .about-photo{ order: 1; margin: 28px -28px 8px; }
-  .about-photo img{ border-radius: 0; }
-}
+  .about-body{ display: contents; }          /* lets the photo slot between paragraphs */
+  .about-body > *{ order: 2; }               /* everything after the photo */
+  .about-body > .lead{ order: 0; }           /* intro paragraph stays first */
 
+  .about-photo{ order: 1; margin: 28px 0 8px; }   /* full width of the text column */
+  .about-photo img{ width: 100%; }
+}
 
 /* ---------- Adventures (photo collage) ---------- */
 
@@ -263,14 +275,18 @@ h2.section-title{
   margin: 0 0 8px;
   padding: 0;
   display: grid;
-  gap: 20px;
+  gap: 14px;
 }
 
 .book-list li{
   font-size: 0.98rem;
   color: var(--ink);
-  display: block;
-  padding-bottom: 4px;
+}
+
+.book-list li .book-title{
+  font-family: var(--body);
+  font-weight: 500;
+  color: var(--ink);
 }
 
 .book-list li .book-author{
@@ -280,20 +296,12 @@ h2.section-title{
   margin-left: 2px;
 }
 
-.book-list li .book-title{
-  font-family: var(--display);
-  font-weight: 600;
-  color: var(--ink);
-}
-
 .book-list li .book-review{
   display: block;
-  margin-top: 6px;
-  padding-left: 14px;
-  border-left: 2px solid var(--line);
+  margin-top: 2px;
   color: var(--ink-dim);
-  font-size: 0.94rem;
-  line-height: 1.55;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 /* ---------- Post list (Writing) ---------- */
@@ -425,7 +433,7 @@ footer.site-footer{
 
 /* ---------- Article / sub-pages ---------- */
 
-.article-header{ padding: 64px 0 0px; }
+.article-header{ padding: 64px 0 0; }
 
 .back-link{
   font-family: var(--mono);
@@ -446,7 +454,6 @@ footer.site-footer{
 }
 
 .article-title{
-  max-width: 720px;
   font-family: var(--display);
   font-weight: 600;
   font-size: clamp(1.9rem, 5vw, 2.6rem);
@@ -454,12 +461,18 @@ footer.site-footer{
   margin: 0 0 16px;
   color: var(--ink);
 }
-.article-header,
+
+.article-subtitle{
+  font-style: italic;
+  color: var(--ink-dim);
+  margin: 0 0 16px;
+}
+
+.article-title:has(+ .article-subtitle){ margin-bottom: 6px; }
 
 .article-body{
-  max-width: 760px;
   padding-bottom: 90px;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.75;
 }
 
@@ -510,7 +523,8 @@ footer.site-footer{
 
 mjx-container[display="true"]{ margin: 24px 0 !important; }
 
-
+/* When a card-header (page title block) follows an article-header
+   (back-link block), don't stack both top paddings. */
 .article-header + .card-header{
   padding-top: 0;
 }
@@ -610,4 +624,14 @@ button:hover{
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
+}
+
+/* ---------- Article column: original 720px width, centred ---------- */
+.article-header,
+.article-body{
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
 }
