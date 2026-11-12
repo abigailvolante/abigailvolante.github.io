@@ -199,9 +199,13 @@ h2.section-title{
 }
 
 @media (max-width: 620px){
-  .about-layout{ grid-template-columns: 1fr; gap: 28px; }
-  .about-photo{ order: -1; margin: 0 auto; }
+  .about-layout{ grid-template-columns: 1fr; gap: 0; }
+  .about-body{ display: contents; }
+  .about-body > *{ order: 2; }
+  .about-body > .lead{ order: 0; }
+  .about-photo{ order: 1; margin: 28px 0 8px; }
 }
+
 
 /* ---------- Adventures (photo collage) ---------- */
 
