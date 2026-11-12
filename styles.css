@@ -200,10 +200,12 @@ h2.section-title{
 
 @media (max-width: 620px){
   .about-layout{ grid-template-columns: 1fr; gap: 0; }
+
   .about-body{ display: contents; }
   .about-body > *{ order: 2; }
   .about-body > .lead{ order: 0; }
-  .about-photo{ order: 1; margin: 28px 0 8px; }
+  .about-photo{ order: 1; margin: 28px -28px 8px; }
+  .about-photo img{ border-radius: 0; }
 }
 
 
@@ -508,8 +510,7 @@ footer.site-footer{
 
 mjx-container[display="true"]{ margin: 24px 0 !important; }
 
-/* When a card-header (page title block) follows an article-header
-   (back-link block), don't stack both top paddings. */
+
 .article-header + .card-header{
   padding-top: 0;
 }
